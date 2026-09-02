@@ -1,20 +1,27 @@
 # Case Studies
 
-Case studies show how the qquirk skills behave when applied to real or internal project work.
+This directory contains real-world examples of how the qquirk skills bundle has been applied, adapted, and improved in actual projects.
 
-Do not invent adoption claims. A case study should be added only when there is a real run, artifact set, or internal validation record to cite.
+## Available Case Studies
 
-## Format
+- [0001-internal-skills-hardening.md](0001-internal-skills-hardening.md): How we applied the qquirk method to harden the skills bundle itself through contract refinement and progressive disclosure
 
-Each case study should include:
+## Template
 
-- project or validation target
-- starting problem
-- skills used
-- artifacts produced
-- validation commands or evidence
-- failure points found
-- method change caused by the run
-- links to PRs, issues, commits, or local run records when available
+Use [template.md](template.md) as a starting point for documenting new case studies of qquirk skills adoption or adaptation.
 
-Use [template.md](template.md) for new entries.
+## Contributing Case Studies
+
+We welcome case studies that demonstrate:
+- Novel applications of the qquirk method in different domains
+- Adaptations of skills for specific project contexts
+- Lessons learned from scaling the qquirk workflow
+- Before/after metrics showing the impact of skills adoption
+- Creative combinations of skills to solve complex problems
+
+When submitting a case study, please:
+1. Follow the format demonstrated in 0001-internal-skills-hardening.md
+2. Include specific, measurable outcomes where possible
+3. Document both successes and challenges encountered
+4. Explain how the qquirk method was applied or adapted
+5. Provide actionable insights for other practitioners

@@ -1,23 +1,34 @@
-# Validation
+# Validation Reference
 
-Run the smallest check that exercises the touched area.
+Use this reference when validating branches with the `publish-open-pr` skill. This outlines the validation steps to run before opening a PR.
 
-## Order
+## Validation Steps
 
-1. Start with `git diff --check`.
-2. Run the narrowest test or command that covers the change.
-3. If no focused test exists, run the best available lightweight validation and say so in the PR body.
+Run these checks to ensure the branch is ready for review:
 
-## Validation Rules
+### 1. Basic Repository State
+- [ ] `git status -sb` shows only expected changes
+- [ ] No unexpected files in working directory
+- [ ] Current branch matches the dedicated issue branch
 
-- Keep validation local to the change when possible.
-- Fix any failure caused by the change before publishing.
-- Do not claim validation you did not actually run.
+### 2. Code Quality
+- [ ] No linting errors (run appropriate linter for your stack)
+- [ ] No type checking errors (run type checker if applicable)
+- [ ] Code follows project formatting standards
 
-## PR Notes
+### 3. Functional Validation
+- [ ] Application builds successfully
+- [ ] Core functionality related to changes works as expected
+- [ ] No regressions in related functionality
 
-Record the exact validation in the PR body.
+### 4. Test Validation
+- [ ] Unit tests pass for modified code
+- [ ] Integration tests pass for affected components
+- [ ] End-to-end tests pass for critical user flows (if applicable)
 
-- Mention each command that ran.
-- Mention any skipped validation and why it was skipped.
-- Mention any manual verification if it was necessary.
+### 5. Dependency Validation
+- [ ] No broken imports or dependencies
+- [ ] External service connections work as expected (if applicable)
+- [ ] Configuration changes are valid and complete
+
+[Remember: Follow the smallest relevant validation first. If validation fails, stop and report it rather than changing the branch here.]

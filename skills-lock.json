@@ -3,7 +3,7 @@
     "agent-observability": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "091f7cc2c91cfeca631640f6ceab4a4c5d95df55284ee03c53b643f5b37dc4f9"
+      "hash": "0a89e244c531e22bb26a40e6c0ec59474e9abba2742c1013dadc88e0605f9b43"
     },
     "api-contracts": {
       "sourceType": "local",
@@ -245,6 +245,21 @@
       "revision": "working-tree",
       "hash": "819a4578a7a422824f0755c892dc9d98230fa827be6342d7f7a4fbc4030cb2ec"
     },
+    "skill-creator": {
+      "sourceType": "local",
+      "revision": "working-tree",
+      "hash": "be76e83390655e386985a7de6189b142b218425a3cc2c521a18d78222dba1515"
+    },
+    "skill-sandbox": {
+      "sourceType": "local",
+      "revision": "working-tree",
+      "hash": "a4d5d87e5169317281978382f7b26202d2159139fb3be32a1c779509ec5e6ac5"
+    },
+    "skill-promoter": {
+      "sourceType": "local",
+      "revision": "working-tree",
+      "hash": "94a9205b97b9c463ab550008349b4def08f246b3d236c106de28f907275980d2"
+    },
     "tdd": {
       "sourceType": "local",
       "revision": "working-tree",
@@ -289,6 +304,11 @@
       "sourceType": "local",
       "revision": "working-tree",
       "hash": "e9f039cf187a7b8d0cdc85d8846ff3f67089b8aa2eca56d60325fb529b0e8c83"
+    },
+    "skill-tutor": {
+      "sourceType": "local",
+      "revision": "working-tree",
+      "hash": "46783996daaa23391d10367cffe98d08b670e8e1a6edddf89bebd6b7d11e31c7"
     },
     "writing-great-skills": {
       "sourceType": "local",
