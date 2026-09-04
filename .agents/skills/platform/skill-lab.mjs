@@ -110,7 +110,7 @@ async function template() {
   const name = process.argv[3];
   if (!name || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name)) throw new Error('name must be kebab-case');
   const domain = optionValue('--domain', 'general');
-  const description = optionValue('--description', `A focused skill for ${domain} workflows.`);
+  const description = optionValue('--description', `A focused skill for ${domain} workflows.`).replace(/\r?\n/g, ' ');
   const capabilities = parseJsonOption('--capabilities') ?? [`define-${name}-workflow`];
   if (!Array.isArray(capabilities) || capabilities.length === 0 || capabilities.some((capability) => typeof capability !== 'string' || !capability.trim())) {
     throw new Error('--capabilities must be a non-empty JSON array of non-empty strings');
@@ -312,7 +312,10 @@ async function metrics() {
   const records = [];
   for (const file of files) {
     const data = JSON.parse(await read(path.join(directory, file)));
-    const duration = Number(data.durationMs ?? data.duration ?? data.metrics?.durationMs);
+    const recordedDuration = data.finishedAt && data.startedAt
+      ? Date.parse(data.finishedAt) - Date.parse(data.startedAt)
+      : undefined;
+    const duration = Number(data.durationMs ?? data.duration ?? data.metrics?.durationMs ?? recordedDuration);
     if (Number.isFinite(duration)) records.push({ file, status: data.status, durationMs: duration });
   }
   const average = records.length ? records.reduce((sum, x) => sum + x.durationMs, 0) / records.length : 0;
