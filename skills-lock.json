@@ -318,37 +318,37 @@
     "contribution-workflow-optimizer": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "7767cd6e15da6e4ca2097da7dfae3be7d9bc0e3527e84cbd04f1721a293dba58"
+      "hash": "393fc8d0d3c056147dc996c84b145ea9cd8f318d1fb524893dcc200d79d7e498"
     },
     "integration-playground": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "ed9ef59d213f1ce71772337f1c88430eed651537038c114c6cdae75f8fe566b0"
+      "hash": "834524a6d0989d80afac4ab9979badda52ab3f974ad364a0b3a72869092a1595"
     },
     "interactive-tutorial-builder": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "288cd9bac1663e2245c09190bdcc26367951ffd7c3e830aeb9f24383a905cb0a"
+      "hash": "5d2fe816fb1f63a7d8b33f153a3587cdf1bd0a0ee8ee296e45ef2426de2ccc07"
     },
     "rule-cataloger": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "cebb4e49573d72be1b1a0824d92b2ad2d6492e876ffb63ea3671f861155c4df8"
+      "hash": "f9bb4bc69db51cf1d42f647e157b8c7825a44edef700e2c5c37afaf8adab66b8"
     },
     "skill-dependency-graph": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "f71a48fddb50f93a334269ec86ac4d4c850f50b47196b8786609f489f95e51e0"
+      "hash": "bbca748951469cd1297d5d30ba4b36edc0473d8794add020f891805eec0e68aa"
     },
     "skill-diff-analyzer": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "cc5f5034c561d3febc87b8d28283d96b047bd91c4818d43a05fc7be7c5ac6484"
+      "hash": "c4c2ca216aa709aadd8423e841d2b57a97593ea8474d834e5de3dc9aa46d477d"
     },
     "skill-performance-metrics": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "f4123da2abcacac04feda32a507cb296b6e70a9b56a782d19712001cd534b5fd"
+      "hash": "ad1dade6b931672b3c8270001475f884571de76416a886824f23d36b93100a38"
     },
     "skill-template-generator": {
       "sourceType": "local",

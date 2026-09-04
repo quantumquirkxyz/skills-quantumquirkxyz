@@ -15,8 +15,7 @@ outputs:
   - checkpoint
 dependencies:
   - skill-tutor
-sideEffects:
-  - write-docs
+sideEffects: []
 stopCondition: The learner has a runnable exercise and a checkable checkpoint derived from the target Skill contract.
 risk: low
 ---

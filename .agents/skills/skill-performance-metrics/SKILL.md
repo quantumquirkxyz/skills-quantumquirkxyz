@@ -15,8 +15,7 @@ outputs:
   - success-rate
 dependencies:
   - agent-observability
-sideEffects:
-  - write-docs
+sideEffects: []
 stopCondition: A report contains sample count, average duration, and success rate or clearly states that data is unavailable.
 risk: low
 ---

@@ -13,8 +13,7 @@ outputs:
   - frequency-report
   - application-area-summary
 dependencies: []
-sideEffects:
-  - write-docs
+sideEffects: []
 stopCondition: Every discovered rule is listed with its source Skill, type, and frequency.
 risk: low
 ---

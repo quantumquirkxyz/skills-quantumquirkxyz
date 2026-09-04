@@ -13,8 +13,7 @@ outputs:
   - graph-json
   - modularity-findings
 dependencies: []
-sideEffects:
-  - write-docs
+sideEffects: []
 stopCondition: The graph is generated and cycles or high-coupling nodes are explicitly reported.
 risk: low
 ---

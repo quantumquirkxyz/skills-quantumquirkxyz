@@ -17,8 +17,7 @@ outputs:
 dependencies:
   - skill-testing-framework
   - code-review
-sideEffects:
-  - write-docs
+sideEffects: []
 stopCondition: The changed Skills have prioritized findings and explicit validation recommendations.
 risk: low
 ---

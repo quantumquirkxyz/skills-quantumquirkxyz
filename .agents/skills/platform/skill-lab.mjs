@@ -8,6 +8,17 @@ const root = process.cwd();
 const skillsRoot = path.join(root, '.agents', 'skills');
 const sandboxRoot = path.join(root, '.skill-sandbox');
 const required = ['name', 'description', 'version', 'capabilities', 'outputs'];
+const labSkillNames = new Set([
+  'contribution-workflow-optimizer',
+  'integration-playground',
+  'interactive-tutorial-builder',
+  'rule-cataloger',
+  'skill-dependency-graph',
+  'skill-diff-analyzer',
+  'skill-performance-metrics',
+  'skill-template-generator',
+  'skill-testing-framework',
+]);
 
 async function read(file) { return fs.readFile(file, 'utf8'); }
 async function exists(file) { try { await fs.access(file); return true; } catch { return false; } }
@@ -62,8 +73,15 @@ function parseJsonOption(name) {
   try { return JSON.parse(value); } catch { throw new Error(`${name} must contain valid JSON`); }
 }
 function runCommand(command, args, cwd) {
+  if (command !== 'node' && command !== process.execPath) {
+    return Promise.reject(new Error('--command executable must be node'));
+  }
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'] });
+    const child = spawn(process.execPath, args, {
+      cwd,
+      env: { QQUIRK_PLAYGROUND: cwd, PATH: process.env.PATH ?? '' },
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
     const stdout = []; const stderr = [];
     child.stdout.on('data', (chunk) => stdout.push(chunk));
     child.stderr.on('data', (chunk) => stderr.push(chunk));
@@ -94,6 +112,9 @@ async function template() {
   const domain = optionValue('--domain', 'general');
   const description = optionValue('--description', `A focused skill for ${domain} workflows.`);
   const capabilities = parseJsonOption('--capabilities') ?? [`define-${name}-workflow`];
+  if (!Array.isArray(capabilities) || capabilities.length === 0 || capabilities.some((capability) => typeof capability !== 'string' || !capability.trim())) {
+    throw new Error('--capabilities must be a non-empty JSON array of non-empty strings');
+  }
   const directory = path.join(sandboxRoot, name);
   await fs.mkdir(directory, { recursive: true });
   const file = path.join(directory, 'SKILL.md');
@@ -151,7 +172,20 @@ async function validate() {
     const warnings = [];
     for (const key of required) if (!fm[key] || (Array.isArray(fm[key]) && !fm[key].length)) errors.push(`missing ${key}`);
     if (fm.name !== name) errors.push(`frontmatter name must be ${name}`);
-    if (!/^#\s+/.test(text.replace(/^---[\s\S]*?---\s*/, ''))) warnings.push('missing Markdown title');
+    const body = text.replace(/^---[\s\S]*?---\s*/, '');
+    const contractRequired = Boolean(requested) || labSkillNames.has(name);
+    if (contractRequired) {
+      const contractStart = body.indexOf('## Contract');
+      const nextHeading = contractStart === -1 ? -1 : body.indexOf('\n## ', contractStart + 10);
+      const contractBody = contractStart === -1 ? '' : body.slice(contractStart, nextHeading === -1 ? body.length : nextHeading);
+      if (contractStart === -1) errors.push('missing ## Contract section');
+      else {
+        for (const field of ['Input:', 'Output:', 'Boundary:']) {
+          if (!contractBody.includes(field)) errors.push(`Contract missing ${field}`);
+        }
+      }
+    }
+    if (!/^#\s+/.test(body)) warnings.push('missing Markdown title');
     for (const dependency of listValue(fm.dependencies)) {
       if (!names.has(dependency)) errors.push(`unknown dependency ${dependency}`);
     }
@@ -164,11 +198,26 @@ async function validate() {
   const execution = [];
   if (process.argv.includes('--execute') && requested?.includes('.skill-sandbox')) {
     const validationScript = path.join(root, '.skill-sandbox', 'validations', 'validate-sandbox-skills.mjs');
-    if (await exists(validationScript)) execution.push(await runCommand('node', [validationScript], root));
+    if (await exists(validationScript)) execution.push(await runProcess('node', [validationScript], root));
     const behavioralScript = path.join(root, '.agents', 'skills', 'platform', 'evaluate-behavioral-fixtures.mjs');
     const fixtureDir = path.join(root, '.skill-sandbox', 'behavioral-fixtures');
     if (await exists(behavioralScript) && await exists(fixtureDir)) {
-      execution.push(await runCommand('node', [behavioralScript], root));
+      execution.push(await runProcess('node', [behavioralScript], root));
+    }
+    function runProcess(command, args, cwd) {
+      return new Promise((resolve, reject) => {
+        const child = spawn(command, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'] });
+        const stdout = []; const stderr = [];
+        child.stdout.on('data', (chunk) => stdout.push(chunk));
+        child.stderr.on('data', (chunk) => stderr.push(chunk));
+        child.on('error', reject);
+        child.on('close', (exitCode) => resolve({
+          command: [command, ...args],
+          exitCode,
+          stdout: Buffer.concat(stdout).toString(),
+          stderr: Buffer.concat(stderr).toString(),
+        }));
+      });
     }
   }
   const report = {

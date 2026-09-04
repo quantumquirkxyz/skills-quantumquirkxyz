@@ -14,8 +14,7 @@ outputs:
   - dependency-impact
   - improvement-suggestions
 dependencies: []
-sideEffects:
-  - write-docs
+sideEffects: []
 stopCondition: The report identifies frontmatter changes, content changes, and whether review is required.
 risk: low
 ---
