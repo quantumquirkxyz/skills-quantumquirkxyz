@@ -37,6 +37,7 @@ The method is documented in:
 - [skill templates](docs/agents/skill-templates.md)
 - [stack matrix](docs/agents/stack-matrix.md)
 - [skill style guide](docs/agents/skill-style-guide.md)
+- [Skill Lab toolkit](docs/agents/skill-lab.md)
 - [release checklist](docs/agents/release-checklist.md)
 - [multi-agent protocol](docs/agents/multi-agent-protocol.md)
 

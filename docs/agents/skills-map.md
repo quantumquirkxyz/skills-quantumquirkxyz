@@ -36,6 +36,21 @@ Canonical route: `setup-qquirk-skills` once per repo, then `ask-to` when routing
 - `make-project`
 - `setup-qquirk-skills`
 
+## Skill Lab
+
+- `skill-template-generator`
+- `skill-testing-framework`
+- `skill-dependency-graph`
+- `rule-cataloger`
+- `skill-diff-analyzer`
+- `interactive-tutorial-builder`
+- `skill-performance-metrics`
+- `integration-playground`
+- `contribution-workflow-optimizer`
+
+These Skills share the `platform/skill-lab.mjs` command surface and use the
+`.skill-sandbox/` directory for experiments before promotion.
+
 ## Platform
 
 - `frontend-design`
