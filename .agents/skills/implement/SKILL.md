@@ -39,6 +39,7 @@ Run typechecking regularly, single test files regularly, and the full test suite
 - Scope: execute the approved work; do not reopen spec decisions unless the ticket is blocked by a real defect or missing dependency.
 - Rule: a ticket is ready to execute only when its acceptance criteria are concrete and its blockers are resolved.
 - Rule: if the work needs a new seam, make the seam choice explicit before coding.
+- Rule: break the work into minimal vertical slices (tracer bullets) that are independently implementable and verifiable. For each slice: implement the slice, validate it locally, and commit the changes with a conventional commit message before proceeding to the next slice.
 - Rule: make the implementation commits on the dedicated issue branch using conventional commit formatting.
 - Rule: keep the issue branch local first, then push it to `origin` before handing off to `publish-open-pr`.
 - Rule: do not open, publish, or merge a PR here; this skill stops at the implemented, validated branch.
