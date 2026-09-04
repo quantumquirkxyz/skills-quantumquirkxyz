@@ -26,8 +26,8 @@ risk: medium
 
 ## Contract
 
-- Input: JSON fixture definition, an executable plus argument array, and a temporary output directory.
-- Output: disposable playground directory plus exit status, stdout, stderr, and command evidence.
+- Input: JSON fixture definition, an optional executable plus argument array, and a temporary output directory.
+- Output: disposable playground directory; when a command is supplied, its exit status, stdout, stderr, and command evidence.
 - Boundary: output must be under the system temporary directory; only Node.js commands run with a minimal environment and commands never pass through a shell.
 
 Run `node .agents/skills/platform/skill-lab.mjs playground --output /tmp/qquirk-playground --fixtures '{"api":{"status":"ok"}}' --command '["node","script.mjs"]'`. Never point it at a production directory or pass credentials into a playground command.

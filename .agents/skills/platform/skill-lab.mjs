@@ -133,7 +133,7 @@ dependencies: []
 sideEffects:
   - write-docs
 stopCondition: The requested ${name} result is complete and its validation evidence is recorded.
-risk: low
+risk: medium
 ---
 
 # ${name}
@@ -171,6 +171,11 @@ async function validate() {
     const errors = [];
     const warnings = [];
     for (const key of required) if (!fm[key] || (Array.isArray(fm[key]) && !fm[key].length)) errors.push(`missing ${key}`);
+    if (requested || labSkillNames.has(name)) {
+      for (const key of ['sideEffects', 'stopCondition', 'risk']) {
+        if (fm[key] === undefined) errors.push(`missing ${key}`);
+      }
+    }
     if (fm.name !== name) errors.push(`frontmatter name must be ${name}`);
     const body = text.replace(/^---[\s\S]*?---\s*/, '');
     const contractRequired = Boolean(requested) || labSkillNames.has(name);
