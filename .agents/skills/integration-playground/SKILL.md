@@ -16,9 +16,7 @@ outputs:
   - stdout-and-stderr
 dependencies:
   - skill-sandbox
-sideEffects:
-  - write-code
-  - write-docs
+sideEffects: []
 stopCondition: The command ran in the disposable fixture directory and its exit status and output are recorded.
 risk: medium
 ---

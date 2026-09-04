@@ -323,7 +323,7 @@
     "integration-playground": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "834524a6d0989d80afac4ab9979badda52ab3f974ad364a0b3a72869092a1595"
+      "hash": "2f0d60f3abf6821a7695003897b57fecec88468ebb2c686cc7b4abea9a76f3d2"
     },
     "interactive-tutorial-builder": {
       "sourceType": "local",
@@ -358,7 +358,7 @@
     "skill-testing-framework": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "3db8c64b227250c3a13f705a5b65eb17ae8fd90288af940db0300b233bfd2131"
+      "hash": "e93d4b60f199317d3b748217d70c1537f48c7623f3621cb7dd40a4310c0f302d"
     }
   }
 }

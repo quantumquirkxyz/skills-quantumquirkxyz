@@ -17,8 +17,7 @@ outputs:
 dependencies:
   - skill-sandbox
   - evaluate-skill
-sideEffects:
-  - write-docs
+sideEffects: []
 stopCondition: The target Skill has a pass/fail report with every structural and contract check accounted for.
 risk: low
 ---

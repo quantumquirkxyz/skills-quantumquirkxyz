@@ -325,7 +325,13 @@ async function metrics() {
 async function playground() {
   const output = path.resolve(root, optionValue('--output', path.join(os.tmpdir(), 'qquirk-skill-playground')));
   if (output === root || !output.startsWith(`${os.tmpdir()}${path.sep}`)) throw new Error('output must be a disposable directory under the system temp directory');
-  await fs.rm(output, { recursive: true, force: true }); await fs.mkdir(path.join(output, 'filesystem'), { recursive: true });
+  try {
+    await fs.access(output);
+    throw new Error('output directory already exists; choose a new disposable directory');
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  await fs.mkdir(path.join(output, 'filesystem'), { recursive: true });
   const fixtures = parseJsonOption('--fixtures') ?? { filesystem: 'isolated fixture\n', api: { status: 'ok', items: [] }, database: { users: [{ id: 1, name: 'fixture-user' }] } };
   await fs.writeFile(path.join(output, 'filesystem', 'fixture.txt'), String(fixtures.filesystem ?? 'isolated fixture\n'));
   await fs.writeFile(path.join(output, 'api.json'), JSON.stringify(fixtures.api ?? { status: 'ok', items: [] }, null, 2));
@@ -341,7 +347,7 @@ async function playground() {
 }
 async function prCheck() {
   const { stdout } = await new Promise((resolve, reject) => {
-    const child = spawn('git', ['diff', '--name-only', optionValue('--base', 'HEAD~1')], { cwd: root });
+    const child = spawn('git', ['diff', '--name-only', `${optionValue('--base', 'HEAD~1')}...HEAD`], { cwd: root });
     let out = ''; child.stdout.on('data', (x) => { out += x; }); child.on('close', (code) => code ? reject(new Error('git diff failed')) : resolve({ stdout: out }));
   });
   const changed = stdout.split(/\r?\n/).filter((file) => /SKILL\.md$/.test(file));
