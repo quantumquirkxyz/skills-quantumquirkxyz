@@ -21,4 +21,10 @@ risk: low
 
 # Rule Cataloger
 
+## Contract
+
+- Input: the canonical Skills directory.
+- Output: rules with source Skills, frequency, type, and application area.
+- Boundary: infer categories conservatively and preserve the raw rule text for review.
+
 Run `node .agents/skills/platform/skill-lab.mjs rules --json`. Review inferred categories as a starting point, then refine application areas from the Skill sections (implementation, testing, documentation) before publishing the catalog.

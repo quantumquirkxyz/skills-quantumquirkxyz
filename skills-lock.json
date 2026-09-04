@@ -318,47 +318,47 @@
     "contribution-workflow-optimizer": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "805e07f3ac2e59d0faa3c812cd72bb77d1ae4652a59f2c678743b34e09a0e5b5"
+      "hash": "7767cd6e15da6e4ca2097da7dfae3be7d9bc0e3527e84cbd04f1721a293dba58"
     },
     "integration-playground": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "d20def5f74513de654e23ed7ae1ea58061555db28dd44b517967d41f94c812ba"
+      "hash": "ed9ef59d213f1ce71772337f1c88430eed651537038c114c6cdae75f8fe566b0"
     },
     "interactive-tutorial-builder": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "96bbcdd517362dcbb742d0597f348c1ea44ff3c480c364ab8453f35b16775ce5"
+      "hash": "288cd9bac1663e2245c09190bdcc26367951ffd7c3e830aeb9f24383a905cb0a"
     },
     "rule-cataloger": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "d10c144ff4eac720c07551250dcff2ff09e69560391a92700322ed568142682b"
+      "hash": "cebb4e49573d72be1b1a0824d92b2ad2d6492e876ffb63ea3671f861155c4df8"
     },
     "skill-dependency-graph": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "41985c8e65c5198741ffa42b99ac90a86956e5f8f58a6796d135817f19ae3c7a"
+      "hash": "f71a48fddb50f93a334269ec86ac4d4c850f50b47196b8786609f489f95e51e0"
     },
     "skill-diff-analyzer": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "4ee503e26c547e07a7a2a17ca5f70f53b340e4a07ca37236b1383cde94640607"
+      "hash": "cc5f5034c561d3febc87b8d28283d96b047bd91c4818d43a05fc7be7c5ac6484"
     },
     "skill-performance-metrics": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "da78f5ab4e32fe1797866b825cbba5a4f7e5b2247ed374dae8c29b775eb52d93"
+      "hash": "f4123da2abcacac04feda32a507cb296b6e70a9b56a782d19712001cd534b5fd"
     },
     "skill-template-generator": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "3dc8ee5d913a8a9e5245cb8762249fd6814d9a946ece36985ab48427a56a2347"
+      "hash": "4fa4839329349bf4e29a1dee52b4917c2ee69839c5b54a531fccfbc48268d813"
     },
     "skill-testing-framework": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "e9e4fdab14ce10a6474774a179da71bd927023b777acee30d752721f1ae31984"
+      "hash": "3db8c64b227250c3a13f705a5b65eb17ae8fd90288af940db0300b233bfd2131"
     }
   }
 }

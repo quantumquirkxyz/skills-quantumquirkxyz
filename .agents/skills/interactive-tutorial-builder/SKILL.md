@@ -23,4 +23,10 @@ risk: low
 
 # Interactive Tutorial Builder
 
+## Contract
+
+- Input: a Skill name and learner context.
+- Output: learning goals, exercise, expected outputs, checkpoint, and response space.
+- Boundary: generate instructional scaffolding; the learner remains responsible for executing the Skill.
+
 Run `node .agents/skills/platform/skill-lab.mjs tutorial <skill-name>`. Adapt the generated exercise to the learner's context, keep the target Skill's stop condition intact, and require evidence at the checkpoint.

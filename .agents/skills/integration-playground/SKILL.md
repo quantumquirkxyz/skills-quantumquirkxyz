@@ -25,4 +25,10 @@ risk: medium
 
 # Integration Playground
 
-Run `node .agents/skills/platform/skill-lab.mjs playground --output <directory>`. The fixture contains only test data and exposes `QQUIRK_PLAYGROUND`; never point it at a production directory or pass credentials into a playground command.
+## Contract
+
+- Input: JSON fixture definition, an executable plus argument array, and a temporary output directory.
+- Output: disposable playground directory plus exit status, stdout, stderr, and command evidence.
+- Boundary: output must be under the system temporary directory; commands never pass through a shell.
+
+Run `node .agents/skills/platform/skill-lab.mjs playground --output /tmp/qquirk-playground --fixtures '{"api":{"status":"ok"}}' --command '["node","script.mjs"]'`. Never point it at a production directory or pass credentials into a playground command.

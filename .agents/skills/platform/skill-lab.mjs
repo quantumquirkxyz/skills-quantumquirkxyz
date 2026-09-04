@@ -3,7 +3,6 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import { spawn } from 'node:child_process';
-import crypto from 'node:crypto';
 
 const root = process.cwd();
 const skillsRoot = path.join(root, '.agents', 'skills');
@@ -41,29 +40,60 @@ async function skillFiles(base = skillsRoot) {
   return out.sort();
 }
 async function manifest(file) { return frontmatter(await read(file)); }
-function array(value) { return Array.isArray(value) ? value : !value || value === '[]' ? [] : [value]; }
+function listValue(value) { return Array.isArray(value) ? value : !value || value === '[]' ? [] : [value]; }
 function json(value) { console.log(JSON.stringify(value, null, 2)); }
-function arg(name, fallback) {
+function optionValue(name, fallback) {
   const index = process.argv.indexOf(name);
   return index === -1 ? fallback : process.argv[index + 1] ?? fallback;
 }
+function normalizedManifest(raw) {
+  return {
+    ...raw,
+    capabilities: listValue(raw.capabilities),
+    inputs: listValue(raw.inputs),
+    outputs: listValue(raw.outputs),
+    dependencies: listValue(raw.dependencies),
+    sideEffects: listValue(raw.sideEffects),
+  };
+}
+function parseJsonOption(name) {
+  const value = optionValue(name);
+  if (value === undefined) return undefined;
+  try { return JSON.parse(value); } catch { throw new Error(`${name} must contain valid JSON`); }
+}
+function runCommand(command, args, cwd) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'] });
+    const stdout = []; const stderr = [];
+    child.stdout.on('data', (chunk) => stdout.push(chunk));
+    child.stderr.on('data', (chunk) => stderr.push(chunk));
+    child.on('error', reject);
+    child.on('close', (exitCode) => resolve({
+      command: [command, ...args],
+      exitCode,
+      stdout: Buffer.concat(stdout).toString(),
+      stderr: Buffer.concat(stderr).toString(),
+    }));
+  });
+}
 function usage() {
   console.log(`skill-lab commands:
-  template <name> [--domain domain] [--description text]
+  template <name> [--domain domain] [--description text] [--capabilities JSON]
   validate [path] [--json]
   graph [--format mermaid|json]
   rules [--json]
   diff <old/SKILL.md> <new/SKILL.md>
   tutorial <skill-name|SKILL.md>
   metrics [runs-directory]
-  playground [--output directory] [--command command]
+  playground [--output directory] [--fixtures JSON] [--command JSON]
   pr-check [--base ref]`);
 }
 async function template() {
   const name = process.argv[3];
   if (!name || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name)) throw new Error('name must be kebab-case');
-  const domain = arg('--domain', 'general');
-  const description = arg('--description', `A focused skill for ${domain} workflows.`);
+  const domain = optionValue('--domain', 'general');
+  const description = optionValue('--description', `A focused skill for ${domain} workflows.`);
+  const capabilities = parseJsonOption('--capabilities') ?? [`define-${name}-workflow`];
   const directory = path.join(sandboxRoot, name);
   await fs.mkdir(directory, { recursive: true });
   const file = path.join(directory, 'SKILL.md');
@@ -73,7 +103,7 @@ name: ${name}
 description: ${description}
 version: 1
 capabilities:
-  - define-${name}-workflow
+${capabilities.map((capability) => `  - ${capability}`).join('\n')}
 inputs:
   - user-request
 outputs:
@@ -104,7 +134,7 @@ risk: low
 - Preserve existing repository conventions.
 - Surface uncertainty and failures explicitly.
 `, 'utf8');
-  json({ status: 'created', file: path.relative(root, file) });
+  json({ status: 'created', file: path.relative(root, file), sandboxSkill: path.relative(root, directory), completedFrontmatter: true, nextValidationCommand: `node .agents/skills/platform/skill-lab.mjs validate ${path.relative(root, directory)} --json` });
 }
 async function validate() {
   const requested = process.argv.slice(3).find((value) => !value.startsWith('--'));
@@ -116,31 +146,50 @@ async function validate() {
   for (const file of files) {
     const name = path.basename(path.dirname(file));
     const text = await read(file).catch(() => '');
-    const fm = frontmatter(text);
+    const fm = normalizedManifest(frontmatter(text));
     const errors = [];
     const warnings = [];
     for (const key of required) if (!fm[key] || (Array.isArray(fm[key]) && !fm[key].length)) errors.push(`missing ${key}`);
     if (fm.name !== name) errors.push(`frontmatter name must be ${name}`);
     if (!/^#\s+/.test(text.replace(/^---[\s\S]*?---\s*/, ''))) warnings.push('missing Markdown title');
-    for (const dependency of array(fm.dependencies)) {
+    for (const dependency of listValue(fm.dependencies)) {
       if (!names.has(dependency)) errors.push(`unknown dependency ${dependency}`);
     }
     for (const pattern of [/TODO\b/i, /replace this/i, /lorem ipsum/i]) {
       if (pattern.test(text)) warnings.push(`anti-pattern: ${pattern}`);
     }
-    if (array(fm.sideEffects).includes('write-code') && fm.risk === 'low') warnings.push('write-code should not be low risk');
+    if (listValue(fm.sideEffects).includes('write-code') && fm.risk === 'low') warnings.push('write-code should not be low risk');
     results.push({ skill: name, file: path.relative(root, file), status: errors.length ? 'fail' : 'pass', errors, warnings });
   }
-  const report = { status: results.some((item) => item.status === 'fail') ? 'fail' : 'pass', results };
+  const execution = [];
+  if (process.argv.includes('--execute') && requested?.includes('.skill-sandbox')) {
+    const validationScript = path.join(root, '.skill-sandbox', 'validations', 'validate-sandbox-skills.mjs');
+    if (await exists(validationScript)) execution.push(await runCommand('node', [validationScript], root));
+    const behavioralScript = path.join(root, '.agents', 'skills', 'platform', 'evaluate-behavioral-fixtures.mjs');
+    const fixtureDir = path.join(root, '.skill-sandbox', 'behavioral-fixtures');
+    if (await exists(behavioralScript) && await exists(fixtureDir)) {
+      execution.push(await runCommand('node', [behavioralScript], root));
+    }
+  }
+  const report = {
+    status: results.some((item) => item.status === 'fail') || execution.some((item) => item.exitCode !== 0) ? 'fail' : 'pass',
+    results,
+    execution,
+  };
   if (process.argv.includes('--json')) json(report);
   else console.log(`${report.status}: ${results.length} skill(s), ${results.filter((item) => item.status === 'fail').length} failure(s)`);
   if (report.status === 'fail') process.exitCode = 1;
 }
 async function graph() {
-  const nodes = await Promise.all((await skillFiles()).map(async (file) => ({ name: path.basename(path.dirname(file)), dependencies: array((await manifest(file)).dependencies) })));
-  if (arg('--format', 'mermaid') === 'json') return json({ nodes, cycles: findCycles(nodes) });
+  const nodes = await Promise.all((await skillFiles()).map(async (file) => ({ name: path.basename(path.dirname(file)), dependencies: listValue((await manifest(file)).dependencies) })));
+  const incoming = new Map(nodes.map((node) => [node.name, 0]));
+  for (const node of nodes) for (const dependency of node.dependencies) incoming.set(dependency, (incoming.get(dependency) ?? 0) + 1);
+  const centralSkills = [...incoming].filter(([, count]) => count > 0).sort((a, b) => b[1] - a[1]).map(([skill, dependents]) => ({ skill, dependents }));
+  const modularityFindings = centralSkills.filter(({ dependents }) => dependents >= 5).map(({ skill, dependents }) => `${skill} has ${dependents} dependents; review whether its contract is too broad.`);
+  if (optionValue('--format', 'mermaid') === 'json') return json({ nodes, cycles: findCycles(nodes), centralSkills, modularityFindings });
   console.log('graph TD');
   for (const node of nodes) for (const dep of node.dependencies) console.log(`  ${node.name} --> ${dep}`);
+  if (centralSkills.length) console.log(`  %% central skills: ${centralSkills.slice(0, 5).map(({ skill }) => skill).join(', ')}`);
 }
 function findCycles(nodes) {
   const edges = new Map(nodes.map((node) => [node.name, node.dependencies]));
@@ -164,12 +213,20 @@ async function rules() {
   for (const file of await skillFiles()) {
     const text = await read(file);
     const rulesFound = text.split(/\r?\n/).filter((line) => /^\s*-\s+Rule:\s*/i.test(line) || /^\s*-\s+.+\bmust\b/i.test(line));
-    bySkill.push({ skill: path.basename(path.dirname(file)), rules: rulesFound.map((line) => line.replace(/^\s*-\s+/, '')) });
-    for (const rule of rulesFound) counts.set(rule, (counts.get(rule) ?? 0) + 1);
+    const skill = path.basename(path.dirname(file));
+    const rules = rulesFound.map((line) => line.replace(/^\s*-\s+/, ''));
+    bySkill.push({ skill, rules });
+    for (const rule of rules) {
+      const current = counts.get(rule) ?? { frequency: 0, sources: [] };
+      current.frequency += 1;
+      current.sources.push(skill);
+      counts.set(rule, current);
+    }
   }
-  const catalog = [...counts].sort((a, b) => b[1] - a[1]).map(([rule, frequency]) => ({
+  const catalog = [...counts].sort((a, b) => b[1].frequency - a[1].frequency).map(([rule, data]) => ({
   rule,
-  frequency,
+  frequency: data.frequency,
+  sources: data.sources,
   type: /structure|frontmatter|format/i.test(rule) ? 'structure' : /test|valid|evidence|quality/i.test(rule) ? 'quality' : 'process',
   applicationArea: /test|valid|fixture|evidence/i.test(rule) ? 'testing' : /doc|report|artifact/i.test(rule) ? 'documentation' : 'implementation',
   }));
@@ -191,8 +248,9 @@ async function diff() {
 async function tutorial() {
   const requested = process.argv[3]; if (!requested) throw new Error('tutorial requires a skill name');
   const file = requested.endsWith('.md') ? path.resolve(root, requested) : path.join(skillsRoot, requested, 'SKILL.md');
-  const fm = await manifest(file);
-  console.log(`# Tutorial: ${fm.name}\n\n${fm.description}\n\n## Learning goals\n\n${array(fm.capabilities).map((x) => `- ${x}`).join('\n')}\n\n## Exercise\n\nProvide an input satisfying: ${array(fm.inputs).join(', ') || 'the documented contract'}.\n\n## Expected result\n\n${array(fm.outputs).map((x) => `- ${x}`).join('\n')}\n\n## Checkpoint\n\n${fm.stopCondition || 'Confirm the output and validation evidence.'}\n`);
+  const fm = normalizedManifest(await manifest(file));
+  const learnerContext = optionValue('--learner-context', 'a contributor learning the qquirk method');
+  console.log(`# Tutorial: ${fm.name}\n\n${fm.description}\n\n## Learner context\n\n${learnerContext}\n\n## Learning goals\n\n${listValue(fm.capabilities).map((x) => `- ${x}`).join('\n')}\n\n## Exercise\n\nProvide an input satisfying: ${listValue(fm.inputs).join(', ') || 'the documented contract'}.\n\n## Expected result\n\n${listValue(fm.outputs).map((x) => `- ${x}`).join('\n')}\n\n## Checkpoint\n\n${fm.stopCondition || 'Confirm the output and validation evidence.'}\n\n## Learner response\n\nRecord the input, output, and validation evidence before continuing.\n`);
 }
 async function metrics() {
   const directory = path.resolve(root, process.argv[3] ?? '.agents/skills/platform/runs');
@@ -207,33 +265,34 @@ async function metrics() {
   const skillComplexity = [];
   for (const file of await skillFiles()) {
     const text = await read(file);
-    const fm = frontmatter(text);
+    const fm = normalizedManifest(frontmatter(text));
     skillComplexity.push({
       skill: fm.name,
-      cognitiveComplexity: text.split(/\r?\n/).length + array(fm.capabilities).length * 2 + array(fm.dependencies).length * 3,
+      cognitiveComplexity: text.split(/\r?\n/).length + listValue(fm.capabilities).length * 2 + listValue(fm.dependencies).length * 3,
     });
   }
-  json({ samples: records.length, averageDurationMs: Math.round(average), successRate: records.length ? records.filter((x) => x.status === 'pass').length / records.length : null, skillComplexity, records });
+  json({ samples: records.length, durationAvailable: records.length > 0, averageDurationMs: records.length ? Math.round(average) : null, successRate: records.length ? records.filter((x) => x.status === 'pass').length / records.length : null, skillComplexity, records });
 }
 async function playground() {
-  const output = path.resolve(root, arg('--output', path.join(os.tmpdir(), 'qquirk-skill-playground')));
+  const output = path.resolve(root, optionValue('--output', path.join(os.tmpdir(), 'qquirk-skill-playground')));
+  if (output === root || !output.startsWith(`${os.tmpdir()}${path.sep}`)) throw new Error('output must be a disposable directory under the system temp directory');
   await fs.rm(output, { recursive: true, force: true }); await fs.mkdir(path.join(output, 'filesystem'), { recursive: true });
-  await fs.writeFile(path.join(output, 'filesystem', 'fixture.txt'), 'isolated fixture\n');
-  await fs.writeFile(path.join(output, 'api.json'), JSON.stringify({ status: 'ok', items: [] }, null, 2));
-  await fs.writeFile(path.join(output, 'database.json'), JSON.stringify({ users: [{ id: 1, name: 'fixture-user' }] }, null, 2));
-  const command = arg('--command');
+  const fixtures = parseJsonOption('--fixtures') ?? { filesystem: 'isolated fixture\n', api: { status: 'ok', items: [] }, database: { users: [{ id: 1, name: 'fixture-user' }] } };
+  await fs.writeFile(path.join(output, 'filesystem', 'fixture.txt'), String(fixtures.filesystem ?? 'isolated fixture\n'));
+  await fs.writeFile(path.join(output, 'api.json'), JSON.stringify(fixtures.api ?? { status: 'ok', items: [] }, null, 2));
+  await fs.writeFile(path.join(output, 'database.json'), JSON.stringify(fixtures.database ?? { users: [] }, null, 2));
+  const command = parseJsonOption('--command');
   let result = { status: 'created', output: path.relative(root, output), command: null };
   if (command) {
-    const child = spawn('sh', ['-c', command], { cwd: output, env: { ...process.env, QQUIRK_PLAYGROUND: output }, stdio: ['ignore', 'pipe', 'pipe'] });
-    const stdout = []; const stderr = []; child.stdout.on('data', (x) => stdout.push(x)); child.stderr.on('data', (x) => stderr.push(x));
-    const code = await new Promise((resolve) => child.on('close', resolve));
-    result = { ...result, status: code === 0 ? 'pass' : 'fail', command, stdout: Buffer.concat(stdout).toString(), stderr: Buffer.concat(stderr).toString(), exitCode: code };
+    if (!Array.isArray(command) || typeof command[0] !== 'string' || command.some((part) => typeof part !== 'string')) throw new Error('--command must be a JSON array of executable and arguments');
+    const child = await runCommand(command[0], command.slice(1), output);
+    result = { ...result, status: child.exitCode === 0 ? 'pass' : 'fail', ...child };
   }
   json(result);
 }
 async function prCheck() {
   const { stdout } = await new Promise((resolve, reject) => {
-    const child = spawn('git', ['diff', '--name-only', arg('--base', 'HEAD~1')], { cwd: root });
+    const child = spawn('git', ['diff', '--name-only', optionValue('--base', 'HEAD~1')], { cwd: root });
     let out = ''; child.stdout.on('data', (x) => { out += x; }); child.on('close', (code) => code ? reject(new Error('git diff failed')) : resolve({ stdout: out }));
   });
   const changed = stdout.split(/\r?\n/).filter((file) => /SKILL\.md$/.test(file));

@@ -25,4 +25,10 @@ risk: low
 
 # Contribution Workflow Optimizer
 
+## Contract
+
+- Input: a pull-request base reference and changed Skill files.
+- Output: prioritized checks for contract, documentation, dependencies, tests, and examples.
+- Boundary: recommend changes only; implementation and merge remain separate workflows.
+
 Run `node .agents/skills/platform/skill-lab.mjs pr-check --base main`. Use its changed-file list as the scope, then validate each changed Skill and check for documentation and examples before recommending merge.
