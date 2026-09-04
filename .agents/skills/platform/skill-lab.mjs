@@ -77,7 +77,7 @@ function runCommand(command, args, cwd) {
     return Promise.reject(new Error('--command executable must be node'));
   }
   return new Promise((resolve, reject) => {
-    const child = spawn(process.execPath, args, {
+    const child = spawn(process.execPath, ['--permission', `--allow-fs-read=${cwd}`, `--allow-fs-write=${cwd}`, ...args], {
       cwd,
       env: { QQUIRK_PLAYGROUND: cwd, PATH: process.env.PATH ?? '' },
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -142,7 +142,7 @@ risk: low
 
 - Input: user request and relevant repository context
 - Output: a concrete ${name} result with validation evidence
-- Scope: solve one focused ${domain} problem
+- Boundary: solve one focused ${domain} problem
 
 ## Process
 
@@ -325,6 +325,9 @@ async function metrics() {
 async function playground() {
   const output = path.resolve(root, optionValue('--output', path.join(os.tmpdir(), 'qquirk-skill-playground')));
   if (output === root || !output.startsWith(`${os.tmpdir()}${path.sep}`)) throw new Error('output must be a disposable directory under the system temp directory');
+  const tempRoot = await fs.realpath(os.tmpdir());
+  const outputParent = await fs.realpath(path.dirname(output));
+  if (outputParent !== tempRoot && !outputParent.startsWith(`${tempRoot}${path.sep}`)) throw new Error('output must resolve under the system temp directory');
   try {
     await fs.access(output);
     throw new Error('output directory already exists; choose a new disposable directory');

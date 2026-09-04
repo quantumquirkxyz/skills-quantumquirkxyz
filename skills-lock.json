@@ -323,7 +323,7 @@
     "integration-playground": {
       "sourceType": "local",
       "revision": "working-tree",
-      "hash": "2f0d60f3abf6821a7695003897b57fecec88468ebb2c686cc7b4abea9a76f3d2"
+      "hash": "f0c2ba1b411a4bf0a8e9d1231c6733490f2c8f29c17942212ae6c65e54b8e3cd"
     },
     "interactive-tutorial-builder": {
       "sourceType": "local",
