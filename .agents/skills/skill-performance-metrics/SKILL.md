@@ -1,6 +1,6 @@
 ---
 name: skill-performance-metrics
-description: Summarize Skill execution duration, success rate, and available run evidence.
+description: Summarize Skill execution duration, success rate, and available run evidence; use when measuring Skill performance from recorded runs.
 version: 1
 capabilities:
   - measure-skill-duration

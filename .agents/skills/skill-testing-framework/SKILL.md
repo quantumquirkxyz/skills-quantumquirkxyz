@@ -1,6 +1,6 @@
 ---
 name: skill-testing-framework
-description: Validate Skill structure, contracts, dependencies, anti-patterns, and isolated execution.
+description: Validate Skill structure, contracts, dependencies, anti-patterns, and isolated execution; use when checking a Skill before promotion or publication.
 version: 1
 capabilities:
   - validate-skill-contract

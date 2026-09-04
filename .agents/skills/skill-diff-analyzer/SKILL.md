@@ -1,6 +1,6 @@
 ---
 name: skill-diff-analyzer
-description: Compare Skill versions and explain contract, dependency, and behavior impact.
+description: Compare Skill versions and explain contract, dependency, and behavior impact; use when assessing changes between two Skill revisions.
 version: 1
 capabilities:
   - compare-skill-versions

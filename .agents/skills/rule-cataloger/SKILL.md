@@ -1,6 +1,6 @@
 ---
 name: rule-cataloger
-description: Extract and classify rules across Skills by type, frequency, and application area.
+description: Extract and classify rules across Skills by type, frequency, and application area; use when auditing the repository's shared guidance.
 version: 1
 capabilities:
   - extract-skill-rules

@@ -1,6 +1,6 @@
 ---
 name: skill-template-generator
-description: Generate an interactive, contract-complete Skill template in the sandbox.
+description: Generate an interactive, contract-complete Skill template in the sandbox; use when starting a new Skill with the lab's standard structure.
 version: 1
 capabilities:
   - generate-skill-template

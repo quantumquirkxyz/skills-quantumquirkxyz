@@ -1,6 +1,6 @@
 ---
 name: contribution-workflow-optimizer
-description: Inspect changed Skills and recommend contribution improvements across standards, docs, tests, and examples.
+description: Inspect changed Skills and recommend contribution improvements across standards, docs, tests, and examples; use when evaluating a Skill pull request before publication.
 version: 1
 capabilities:
   - audit-skill-pull-request

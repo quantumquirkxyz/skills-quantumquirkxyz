@@ -1,6 +1,6 @@
 ---
 name: skill-dependency-graph
-description: Build a dependency graph that exposes central Skills, cycles, and unnecessary coupling.
+description: Build a dependency graph that exposes central Skills, cycles, and unnecessary coupling; use when analyzing Skill modularity or dependency risk.
 version: 1
 capabilities:
   - build-skill-dependency-graph

@@ -1,6 +1,6 @@
 ---
 name: integration-playground
-description: Create a disposable fixture environment for safely exercising Skills against local APIs, data, and files.
+description: Create a disposable fixture environment for safely exercising Skills against local APIs, data, and files; use when testing a Skill with isolated local fixtures.
 version: 1
 capabilities:
   - create-isolated-fixtures
