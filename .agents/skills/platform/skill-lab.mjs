@@ -295,8 +295,17 @@ async function diff() {
   const oldFm = frontmatter(oldText); const newFm = frontmatter(newText);
   const fields = [...new Set([...Object.keys(oldFm), ...Object.keys(newFm)])];
   const changes = fields.filter((field) => JSON.stringify(oldFm[field]) !== JSON.stringify(newFm[field])).map((field) => ({ field, from: oldFm[field] ?? null, to: newFm[field] ?? null }));
-  const removed = oldText.split(/\r?\n/).filter((line) => !newText.includes(line)).slice(0, 20);
-  const added = newText.split(/\r?\n/).filter((line) => !oldText.includes(line)).slice(0, 20);
+  function lineDelta(before, after) {
+    const counts = new Map();
+    for (const line of after) counts.set(line, (counts.get(line) ?? 0) + 1);
+    return before.filter((line) => {
+      const count = counts.get(line) ?? 0;
+      if (count > 0) { counts.set(line, count - 1); return false; }
+      return true;
+    }).slice(0, 20);
+  }
+  const removed = lineDelta(oldText.split(/\r?\n/), newText.split(/\r?\n/));
+  const added = lineDelta(newText.split(/\r?\n/), oldText.split(/\r?\n/));
   json({ status: 'complete', changes, added, removed, impact: changes.some((item) => ['dependencies', 'sideEffects', 'risk'].includes(item.field)) ? 'review-required' : 'low' });
 }
 async function tutorial() {
@@ -328,7 +337,7 @@ async function metrics() {
       cognitiveComplexity: text.split(/\r?\n/).length + listValue(fm.capabilities).length * 2 + listValue(fm.dependencies).length * 3,
     });
   }
-  json({ samples: records.length, durationAvailable: records.length > 0, averageDurationMs: records.length ? Math.round(average) : null, successRate: records.length ? records.filter((x) => x.status === 'pass').length / records.length : null, skillComplexity, records });
+  json({ samples: records.length, durationAvailable: records.length > 0, averageDurationMs: records.length ? Math.round(average) : null, successRate: records.length ? records.filter((x) => ['pass', 'success'].includes(x.status)).length / records.length : null, skillComplexity, records });
 }
 async function playground() {
   const output = path.resolve(root, optionValue('--output', path.join(os.tmpdir(), 'qquirk-skill-playground')));
