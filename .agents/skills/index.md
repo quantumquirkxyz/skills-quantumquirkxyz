@@ -158,3 +158,15 @@
 ---
 
 *Generado automáticamente — no editar a mano*
+
+## Áreas añadidas (2025-09-06)
+- backend (backend-architecture, microservices)
+- ux (ux-research, interaction-design)
+- qa (qa-automation, performance-testing)
+- accessibility
+- iot (iot-embedded)
+- networking
+- compilers
+- os (os-kernel)
+- cms (cms-architecture, localization)
+- xr (xr-development)
