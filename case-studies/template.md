@@ -27,7 +27,7 @@
 
 ## Method Change
 
-<what changed in the qquirk method or skills after this case>
+<what changed in the quirk method or skills after this case>
 
 ## Status
 

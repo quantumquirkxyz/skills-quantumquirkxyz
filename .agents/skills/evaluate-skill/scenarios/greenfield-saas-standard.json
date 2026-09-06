@@ -3,7 +3,7 @@
   "title": "Greenfield SaaS project from idea to ship",
   "userRequest": "I want to build a standard SaaS web app from a rough idea and eventually ship it through a reviewed PR workflow.",
   "expectedRoute": [
-    "setup-qquirk-skills",
+    "setup-quirk-skills",
     "ask-to",
     "grill-with-docs",
     "to-spec",

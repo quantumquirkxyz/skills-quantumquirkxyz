@@ -6,7 +6,7 @@ Each skill owns the template, examples, and supporting references for the artifa
 
 - If a skill writes a durable artifact, the template belongs next to that skill.
 - If a skill has multiple artifact shapes, it should keep one reference file per artifact shape.
-- Shared quality principles live in `docs/agents/qquirk-method.md` and `docs/agents/work-item-format.md`.
+- Shared quality principles live in `docs/agents/quirk-method.md` and `docs/agents/work-item-format.md`.
 
 ```mermaid
 flowchart TD
@@ -35,7 +35,7 @@ flowchart TD
 
 | Skill | Artifact | Purpose | Next consumer |
 |---|---|---|---|
-| `setup-qquirk-skills` | seed tracker/domain templates | Configure a repo for qquirk workflows | `ask-to`, `triage`, `to-spec` |
+| `setup-quirk-skills` | seed tracker/domain templates | Configure a repo for quirk workflows | `ask-to`, `triage`, `to-spec` |
 | `make-project` | `references/graphql.md` | Create and configure a GitHub Projects board | project users and work-item skills |
 | `domain-modeling` | `ADR-FORMAT.md`, `CONTEXT-FORMAT.md` | Record and maintain domain vocabulary | `grill-with-docs`, `triage`, `make-project` |
 | `grill-with-docs` | context and ADR updates created during the interview | Sharpen the plan and write durable context | `to-spec`, `implement` |

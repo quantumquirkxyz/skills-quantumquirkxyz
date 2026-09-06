@@ -1,7 +1,7 @@
 # Skill Conflict Matrix
 
 This file records known overlaps, trigger ambiguities, and delegation rules between
-qquirk Skills. It is the source of truth for routing when more than one skill could
+quirk Skills. It is the source of truth for routing when more than one skill could
 apply to the same request.
 
 ## How to read this matrix

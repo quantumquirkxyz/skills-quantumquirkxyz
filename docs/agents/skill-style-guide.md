@@ -1,6 +1,6 @@
 # Skill Style Guide
 
-Use this guide when editing or adding qquirk Skills.
+Use this guide when editing or adding quirk Skills.
 
 ```mermaid
 flowchart LR
@@ -35,7 +35,7 @@ flowchart LR
 
 ## Language
 
-- Use qquirk vocabulary from `CONTEXT.md` and `docs/agents/qquirk-method.md`.
+- Use quirk vocabulary from `CONTEXT.md` and `docs/agents/quirk-method.md`.
 - Avoid person-branded names and repository-specific examples.
 - Prefer "source of truth", "scope", "validation", "owner", and "next consumer" over vague status language.
 

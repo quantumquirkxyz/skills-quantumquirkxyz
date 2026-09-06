@@ -4,8 +4,8 @@ This document records the origin and redesign status of the skills bundle. It ex
 
 ## Provenance Classes
 
-- **Original qquirk:** authored in this repository for the qquirk workflow.
-- **qquirk redesign:** based on an existing public or prior workflow shape, then rewritten, renamed, rerouted, or re-scoped into the qquirk system.
+- **Original quirk:** authored in this repository for the quirk workflow.
+- **quirk redesign:** based on an existing public or prior workflow shape, then rewritten, renamed, rerouted, or re-scoped into the quirk system.
 - **Compatibility name retained:** a stable command name kept because it is useful to users, while the surrounding behavior belongs to this bundle.
 - **Retired legacy alias:** an old name intentionally removed from active routing.
 
@@ -14,7 +14,7 @@ This document records the origin and redesign status of the skills bundle. It ex
 The active workflow is:
 
 ```text
-setup-qquirk-skills
+setup-quirk-skills
 -> ask-to
 -> grill-with-docs
 -> to-spec
@@ -37,13 +37,13 @@ The following names are intentionally not active skills in this repository:
 - `frontend-development`
 - `improve-codebase-architecture`
 
-When a retired name represents useful behavior, the behavior has been routed through the active qquirk vocabulary instead.
+When a retired name represents useful behavior, the behavior has been routed through the active quirk vocabulary instead.
 
 ## Active Name Decisions
 
-- `ask-to` replaces person-branded routing with a neutral qquirk router.
-- `setup-qquirk-skills` replaces repo- or person-branded setup.
-- `grill` is retained as a stable shorthand for the qquirk questioning primitive.
+- `ask-to` replaces person-branded routing with a neutral quirk router.
+- `setup-quirk-skills` replaces repo- or person-branded setup.
+- `grill` is retained as a stable shorthand for the quirk questioning primitive.
 - `grill-with-docs` is retained because it describes the useful behavior: question deeply while updating durable docs.
 - `review-fix-loop` is the repair coordinator; it does not merge or close work.
 - `plan-review-fixes` and `implement-review-fixes` remain separate so planning and mutation do not blur.
@@ -57,7 +57,7 @@ The bundle may be influenced by public skill patterns, GitHub workflow practices
 - provenance is recorded here
 - validation confirms no legacy aliases remain in active routing
 
-The point is not to hide influence. It is to turn influence into a distinct qquirk system with its own vocabulary, template ownership, and delivery flow.
+The point is not to hide influence. It is to turn influence into a distinct quirk system with its own vocabulary, template ownership, and delivery flow.
 
 ## Maintenance Rule
 

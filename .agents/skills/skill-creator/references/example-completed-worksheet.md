@@ -53,7 +53,7 @@ Capability: generate-organization-report
 
 ## Worksheet 2.1: Skill Contract Design
 ```
-Description (following qquirk skill-style-guide):
+Description (following quirk skill-style-guide):
 This skill analyzes a project's directory structure and recommends organization improvements that follow established conventions and improve maintainability. Use when you need to assess or improve project file organization without making automatic changes.
 
 Explicit Inputs (what the skill consumes):

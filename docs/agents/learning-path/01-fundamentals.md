@@ -1,8 +1,8 @@
-# qquirk Method Fundamentals
+# quirk Method Fundamentals
 
 ## Learning Path Level 1: Understanding the Core Principles
 
-### The 8 Principles of the qquirk Method
+### The 8 Principles of the quirk Method
 
 1. **Context before action**
    - Always build a fresh context pack before engaging in broad work
@@ -64,7 +64,7 @@ Familiarize yourself with these key terms:
 The standard workflow for feature development:
 
 ```
-setup-qquirk-skills
+setup-quirk-skills
 → ask-to
 → grill-with-docs
 → to-spec
@@ -78,7 +78,7 @@ setup-qquirk-skills
 
 ### Quality Bar
 
-A qquirk artifact is acceptable when it answers these questions:
+A quirk artifact is acceptable when it answers these questions:
 
 1. What is the source of truth?
 2. What is in scope?

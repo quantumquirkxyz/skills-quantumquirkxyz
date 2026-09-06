@@ -1,6 +1,6 @@
 ---
 name: skill-tutor
-description: Interactive tutorial that guides users through creating their first qquirk skill using structured worksheets and hands-on practice.
+description: Interactive tutorial that guides users through creating their first quirk skill using structured worksheets and hands-on practice.
 version: 1
 capabilities:
   - guide-first-skill-creation
@@ -27,17 +27,17 @@ risk: low
 trustTier: 2
 ---
 
-# Skill Tutor: Interactive Guide to Creating Your First qquirk Skill
+# Skill Tutor: Interactive Guide to Creating Your First quirk Skill
 
-This skill provides an interactive, worksheet-based tutorial that guides you through creating your first qquirk skill using hands-on practice and structured learning.
+This skill provides an interactive, worksheet-based tutorial that guides you through creating your first quirk skill using hands-on practice and structured learning.
 
 ## Contract
 
 - Input: learning goal, preferred skill type, available time
 - Output: completed tutorial worksheet, created skill in sandbox, learning validation, personalized learning path
-- Scope: guided first experience creating a qquirk skill
+- Scope: guided first experience creating a quirk skill
 - Rule: learning by doing - you will create an actual skill during the tutorial
-- Rule: all skills created follow the qquirk method and can be validated using existing tools
+- Rule: all skills created follow the quirk method and can be validated using existing tools
 - Rule: tutorial adapts to your background and goals while teaching core concepts
 
 ## Interactive Tutorial Process
@@ -48,7 +48,7 @@ This tutorial uses the principle of "progressive disclosure" for learning - reve
 
 #### Worksheet 1.1: Understanding Skills
 ```
-What is a skill in the qquirk method? (In your own words)
+What is a skill in the quirk method? (In your own words)
 _________________________________________________________
 _________________________________________________________
 
@@ -56,7 +56,7 @@ What makes a skill predictable? (Hint: think about the root virtue)
 _________________________________________________________
 _________________________________________________________
 
-Name one principle of the qquirk method and explain why it matters:
+Name one principle of the quirk method and explain why it matters:
 Principle: _______________________________________________
 Explanation: ____________________________________________
 _________________________________________________________
@@ -215,14 +215,14 @@ _________________________________________________________
 What type of skill would you like to create next?
 _________________________________________________________
 
-What is one question you still have about skills or the qquirk method?
+What is one question you still have about skills or the quirk method?
 _________________________________________________________
 _________________________________________________________
 ```
 
 ## Learning Path Integration
 
-This tutorial connects to the broader qquirk learning ecosystem:
+This tutorial connects to the broader quirk learning ecosystem:
 
 ### After Completing This Tutorial:
 - You have practical experience creating a skill
@@ -243,7 +243,7 @@ The user has completed this skill when:
 - They have created a valid skill in the .skill-sandbox/ directory
 - They have successfully validated their skill using the sandbox validation tools
 - They have reflected on their learning experience and identified next steps
-- They can explain the basic concepts of skills in the qquirk method
+- They can explain the basic concepts of skills in the quirk method
 
 ## Guardrails
 

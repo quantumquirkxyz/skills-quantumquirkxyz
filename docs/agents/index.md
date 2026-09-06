@@ -1,6 +1,6 @@
 # Agent Skills Index
 
-This repo uses the repository-local qquirk Skills bundle in `.agents/skills/`. This index is the operating map for the bundle and the first stop for any work-item or review flow.
+This repo uses the repository-local quirk Skills bundle in `.agents/skills/`. This index is the operating map for the bundle and the first stop for any work-item or review flow.
 
 ```mermaid
 flowchart TD
@@ -34,7 +34,7 @@ flowchart TD
 
 | Document | Purpose |
 |---|---|
-| [qquirk method](qquirk-method.md) | Method vocabulary and quality bar |
+| [quirk method](quirk-method.md) | Method vocabulary and quality bar |
 | [Provenance](provenance.md) | Origin, redesign, retired names |
 | [Issue tracker](issue-tracker.md) | Tracker configuration |
 | [Work item format](work-item-format.md) | Metadata shape for specs, tickets, PRs |

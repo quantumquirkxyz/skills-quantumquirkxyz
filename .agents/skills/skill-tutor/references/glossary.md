@@ -1,12 +1,12 @@
-# qquirk Skill Tutor Glossary
+# quirk Skill Tutor Glossary
 
 ## Core Concepts
 
 **Skill**: A modular, self-contained package that extends an agent's capabilities by providing specialized knowledge, workflows, or tool integrations.
 
-**qquirk Method**: The workflow philosophy that governs how skills route work, preserve context, produce artifacts, review changes, repair findings, and ship work predictably.
+**quirk Method**: The workflow philosophy that governs how skills route work, preserve context, produce artifacts, review changes, repair findings, and ship work predictably.
 
-**Predictability**: The agent taking the same _process_ every run, not producing the same output — this is the root virtue of the qquirk method.
+**Predictability**: The agent taking the same _process_ every run, not producing the same output — this is the root virtue of the quirk method.
 
 **Context Pack**: A bounded set of fresh reads and provenance that gives the next skill enough evidence to act.
 
@@ -91,4 +91,4 @@
 
 **Skill Manifest**: The YAML frontmatter of a skill that declares its properties and contract.
 
-This glossary is adapted from the qquirk method documentation and skill style guide. For complete definitions, refer to the official documents in `docs/agents/`.
+This glossary is adapted from the quirk method documentation and skill style guide. For complete definitions, refer to the official documents in `docs/agents/`.

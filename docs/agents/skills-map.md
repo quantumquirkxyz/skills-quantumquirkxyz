@@ -2,7 +2,7 @@
 
 ```mermaid
 mindmap
-    root((qquirk skills))
+    root((quirk skills))
         Core flow
             ask-to
             grill
@@ -18,7 +18,7 @@ mindmap
             ship-subissue
         Quality and governance
             authorship
-            qquirk-method
+            quirk-method
             provenance
             skill-audit
             evaluate-skill
@@ -28,7 +28,7 @@ mindmap
             docs-management
             triage
             make-project
-            setup-qquirk-skills
+            setup-quirk-skills
         Platform
             frontend-design
             design-system
@@ -86,14 +86,14 @@ mindmap
 | `implement-review-fixes` | Apply the planned review fixes |
 | `ship-subissue` | Merge clean PR and close linked issue |
 
-Canonical route: `setup-qquirk-skills` once per repo, then `ask-to` when routing is unclear. For standard feature work, use `grill-with-docs` -> `to-spec` -> `to-tickets` -> `implement` -> `publish-open-pr` -> `review-pr`. If the review is dirty, `review-fix-loop` coordinates `plan-review-fixes` and `implement-review-fixes` until the PR is clean or blocked. `ship-subissue` owns merge, issue closure, and tracker completion only after a clean review.
+Canonical route: `setup-quirk-skills` once per repo, then `ask-to` when routing is unclear. For standard feature work, use `grill-with-docs` -> `to-spec` -> `to-tickets` -> `implement` -> `publish-open-pr` -> `review-pr`. If the review is dirty, `review-fix-loop` coordinates `plan-review-fixes` and `implement-review-fixes` until the PR is clean or blocked. `ship-subissue` owns merge, issue closure, and tracker completion only after a clean review.
 
 ## Quality and governance
 
 | Skill | Purpose |
 |---|---|
 | `AUTHORSHIP.md` | Authorship and integrity rules |
-| `docs/agents/qquirk-method.md` | Method vocabulary and quality bar |
+| `docs/agents/quirk-method.md` | Method vocabulary and quality bar |
 | `docs/agents/provenance.md` | Origin and redesign status |
 | `skill-audit` | Audit bundle, lockfile, symlink parity |
 | `evaluate-skill` | Evaluate skill against fixed scenarios |
@@ -103,7 +103,7 @@ Canonical route: `setup-qquirk-skills` once per repo, then `ask-to` when routing
 | `docs-management` | Keep docs aligned with project shape |
 | `triage` | Classify issues and PRs into durable states |
 | `make-project` | Create and configure GitHub Projects |
-| `setup-qquirk-skills` | Configure repo for qquirk workflows |
+| `setup-quirk-skills` | Configure repo for quirk workflows |
 
 ## Skill Lab
 

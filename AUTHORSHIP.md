@@ -1,12 +1,12 @@
 # Authorship
 
-`qquirk Skills` is authored and maintained by Jhuomar Boskoll Quintero.
+`quirk Skills` is authored and maintained by Jhuomar Boskoll Quintero.
 
 This repository is not just a renamed collection of prompts. It is a cohesive engineering system with a declared method, routing model, artifact ownership map, validation scripts, scenario evaluations, and provenance record.
 
 ## Authorial Position
 
-The `qquirk` method treats agent-assisted software development as a controlled engineering system:
+The `quirk` method treats agent-assisted software development as a controlled engineering system:
 
 - preserve context before acting
 - sharpen ambiguous ideas through structured questioning
@@ -19,7 +19,7 @@ The `qquirk` method treats agent-assisted software development as a controlled e
 
 ## What Makes This Bundle Mine
 
-- The flow is organized around `qquirk` routing and delivery stages.
+- The flow is organized around `quirk` routing and delivery stages.
 - The skills use a shared vocabulary, per-skill artifact ownership, and a validation strategy.
 - The repository contains original documentation for adoption, provenance, template ownership, and scenario evaluation.
 - Public or prior workflow influences are recorded as influences, not hidden.
@@ -27,9 +27,9 @@ The `qquirk` method treats agent-assisted software development as a controlled e
 
 ## Naming
 
-`qquirk` is the method namespace. It names the author's workflow, not a single tool provider, and the bundle's own operating language.
+`quirk` is the method namespace. It names the author's workflow, not a single tool provider, and the bundle's own operating language.
 
-Stable names such as `grill`, `grill-with-docs`, `implement`, `review-pr`, `plan-review-fixes`, `implement-review-fixes`, and `setup-qquirk-skills` are kept because they describe useful workflow surfaces. Their behavior, routing, templates, and surrounding documentation are maintained as part of the `qquirk` system.
+Stable names such as `grill`, `grill-with-docs`, `implement`, `review-pr`, `plan-review-fixes`, `implement-review-fixes`, and `setup-quirk-skills` are kept because they describe useful workflow surfaces. Their behavior, routing, templates, and surrounding documentation are maintained as part of the `quirk` system.
 
 ## Integrity Rules
 

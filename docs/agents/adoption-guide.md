@@ -1,4 +1,4 @@
-# qquirk Skills Adoption Guide
+# quirk Skills Adoption Guide
 
 Use this guide when installing this skills bundle into a new or existing project repository.
 
@@ -6,7 +6,7 @@ Use this guide when installing this skills bundle into a new or existing project
 
 ```mermaid
 flowchart TD
-    A[Copy or sync bundle files] --> B[Run setup-qquirk-skills]
+    A[Copy or sync bundle files] --> B[Run setup-quirk-skills]
     B --> C[Configure tracker and domain docs]
     C --> D[Update CONTEXT.md]
     D --> E[Run validation]
@@ -14,7 +14,7 @@ flowchart TD
 ```
 
 1. Copy or sync `.agents/skills/`, `.claude/skills/`, `docs/agents/`, `docs/adr/README.md`, `CONTEXT.md`, and `skills-lock.json` into the target repo.
-2. Run `setup-qquirk-skills` once in the target repo.
+2. Run `setup-quirk-skills` once in the target repo.
 3. Configure `docs/agents/issue-tracker.md`, `docs/agents/triage-labels.md`, and `docs/agents/domain.md` for the project's real tracker and domain layout.
 4. Update `CONTEXT.md` with project-specific language. Do not copy domain vocabulary from another repo.
 5. Run the validation commands in this guide.
@@ -29,7 +29,7 @@ flowchart TD
 | `.claude/skills/` | Compatibility symlinks to canonical skills |
 | `skills-lock.json` | SHA-256 hashes for canonical `SKILL.md` files |
 | `docs/agents/index.md` | Governance index for work-item skills |
-| `docs/agents/qquirk-method.md` | Method vocabulary and quality bar |
+| `docs/agents/quirk-method.md` | Method vocabulary and quality bar |
 | `docs/agents/provenance.md` | Origin, redesign, retired-name record |
 | `docs/agents/work-item-format.md` | Metadata shape for specs, tickets, PRs |
 | `docs/agents/skill-templates.md` | Artifact template map |
@@ -88,13 +88,13 @@ flowchart LR
 - Keep skill names stable unless the target repo has a strong reason to fork them.
 - Specialize through `CONTEXT.md`, ADRs, issue tracker docs, validation commands, and stack-specific skills.
 - Do not embed another repo's domain terms, branch names, issue numbers, or examples.
-- Preserve `AUTHORSHIP.md`, `docs/agents/qquirk-method.md`, and `docs/agents/provenance.md` unless intentionally forking the method.
+- Preserve `AUTHORSHIP.md`, `docs/agents/quirk-method.md`, and `docs/agents/provenance.md` unless intentionally forking the method.
 - Add new skills only when the behavior is repeatedly useful and cannot be expressed cleanly through existing skills.
 - Prefer scenario fixtures under `evaluate-skill/scenarios/` before changing core workflow skills.
 
 ## Readiness Checklist
 
-- [ ] `setup-qquirk-skills` has run or equivalent docs exist.
+- [ ] `setup-quirk-skills` has run or equivalent docs exist.
 - [ ] `CONTEXT.md` names only this repo's domain.
 - [ ] `docs/agents/issue-tracker.md` reflects the actual tracker.
 - [ ] `docs/agents/triage-labels.md` matches actual label strings.

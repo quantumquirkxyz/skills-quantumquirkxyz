@@ -1,11 +1,11 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
 
-# qquirk Skills
+# quirk Skills
 
-`qquirk Skills` is a **repository-local engineering workflow** for taking software projects from rough intent to reviewed, validated delivery.
+`quirk Skills` is a **repository-local engineering workflow** for taking software projects from rough intent to reviewed, validated delivery.
 
-The bundle follows the `qquirk` method: clarify before building, preserve project context, cut work into claimable slices, review through separate Standards and Spec axes, repair through explicit plans, and ship only after evidence is clean.
+The bundle follows the `quirk` method: clarify before building, preserve project context, cut work into claimable slices, review through separate Standards and Spec axes, repair through explicit plans, and ship only after evidence is clean.
 
 When a PR branch is conflicted, the review-repair flow first routes that branch-state problem through `resolving-merge-conflicts`, then returns to `review-pr` / `review-fix-loop`, and only ships once the branch is clean and review is clean.
 
@@ -35,7 +35,7 @@ When a PR branch is conflicted, the review-repair flow first routes that branch-
 
 ```mermaid
 flowchart TD
-    A[setup-qquirk-skills] --> B[ask-to]
+    A[setup-quirk-skills] --> B[ask-to]
     B --> C[grill-with-docs]
     C --> D[to-spec]
     D --> E[to-tickets]
@@ -59,7 +59,7 @@ The method is documented in:
 | Document | Purpose |
 |---|---|
 | [AUTHORSHIP.md](AUTHORSHIP.md) | Authorship and integrity |
-| [qquirk method](docs/agents/qquirk-method.md) | Method vocabulary and quality bar |
+| [quirk method](docs/agents/quirk-method.md) | Method vocabulary and quality bar |
 | [provenance](docs/agents/provenance.md) | Origin and redesign status |
 | [adoption guide](docs/agents/adoption-guide.md) | Installation and sync |
 | [skill templates](docs/agents/skill-templates.md) | Artifact templates map |
@@ -85,7 +85,7 @@ For a portable, AI-agnostic installation and usage path, start here:
 
 ```mermaid
 flowchart TD
-    A[Clone or sync bundle] --> B[Run setup-qquirk-skills]
+    A[Clone or sync bundle] --> B[Run setup-quirk-skills]
     B --> C[Configure issue tracker and domain docs]
     C --> D[Run check-all]
     D --> E[Start with ask-to]
@@ -165,27 +165,27 @@ The bundle is designed to be copied into another repository and then specialized
 ### Quick start
 
 ```bash
-bash scripts/install-qquirk-skills.sh /path/to/target-repo
+bash scripts/install-quirk-skills.sh /path/to/target-repo
 ```
 
 ### One-line installer
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/quantumquirkxyz/skills-quantumquirkxyz/main/scripts/install-qquirk-skills.sh | bash -s -- /path/to/target-repo
+curl -fsSL https://raw.githubusercontent.com/quantumquirkxyz/quirk/main/scripts/install-quirk-skills.sh | bash -s -- /path/to/target-repo
 ```
 
 If you already have a local checkout of this bundle, use:
 
 ```bash
-bash scripts/install-qquirk-skills.sh /path/to/target-repo
+bash scripts/install-quirk-skills.sh /path/to/target-repo
 ```
 
 If you prefer to inspect first and then install from a clone:
 
 ```bash
-git clone https://github.com/quantumquirkxyz/skills-quantumquirkxyz.git
-cd skills-quantumquirkxyz
-bash scripts/install-qquirk-skills.sh /path/to/target-repo
+git clone https://github.com/quantumquirkxyz/quirk.git
+cd quirk
+bash scripts/install-quirk-skills.sh /path/to/target-repo
 ```
 
 The installer copies these bundle files:
@@ -201,7 +201,7 @@ The installer copies these bundle files:
 
 ### After installation
 
-1. Run `setup-qquirk-skills` in the target repo.
+1. Run `setup-quirk-skills` in the target repo.
 2. Follow the [adoption guide](docs/agents/adoption-guide.md) to set the issue tracker, domain docs, and validation commands.
 3. Use `ask-to` or the standard flow to route work.
 

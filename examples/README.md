@@ -1,7 +1,7 @@
 # Examples Showcase
 
 These examples are intentionally small and executable as prompts. They
-demonstrate common capabilities and complete qquirk flows without requiring
+demonstrate common capabilities and complete quirk flows without requiring
 external services.
 
 | Example | Demonstrates |

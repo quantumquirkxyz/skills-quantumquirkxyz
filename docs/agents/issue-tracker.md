@@ -2,7 +2,7 @@
 
 ## Tracker
 
-GitHub Issues in `quantumquirkxyz/skills-quantumquirkxyz` are the issue tracker for this repo.
+GitHub Issues in `quantumquirkxyz/skills-quirk` are the issue tracker for this repo.
 
 ## Workflow
 

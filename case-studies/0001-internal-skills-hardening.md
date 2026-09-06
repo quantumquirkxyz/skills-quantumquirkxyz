@@ -1,9 +1,9 @@
-# Internal Skills Hardening: Making the qquirk Skills Bundle More Reliable
+# Internal Skills Hardening: Making the quirk Skills Bundle More Reliable
 
 ## Case Study: Improving Skill Predictability Through Contract Refinement
 
 ### Background
-As the qquirk skills bundle grew to over 50 skills, inconsistencies began to emerge in skill contracts, leading to unpredictable agent behavior. Some skills had vague stop conditions, others declared incorrect side effects, and many missed opportunities for progressive disclosure. This case study documents how we applied the qquirk method to harden the skills bundle itself.
+As the quirk skills bundle grew to over 50 skills, inconsistencies began to emerge in skill contracts, leading to unpredictable agent behavior. Some skills had vague stop conditions, others declared incorrect side effects, and many missed opportunities for progressive disclosure. This case study documents how we applied the quirk method to harden the skills bundle itself.
 
 ### The Problem
 Despite having a validation system, we observed three recurring issues:
@@ -16,18 +16,18 @@ These issues caused agents to:
 - Make unintended repository modifications
 - Struggle to find essential information in bloated skill documents
 
-### Applying the qquirk Method
+### Applying the quirk Method
 
 #### Step 1: Context Building with context-pack
 We began by using the context-pack skill to build a minimal fresh context:
-- Reviewed the qquirk-method.md for core principles
+- Reviewed the quirk-method.md for core principles
 - Examined skill-style-guide.md for authoring standards
 - Analyzed existing skills that were considered exemplars
 - Studied the validation system to understand what could be checked automatically
 
 #### Step 2: Questioning with grill-with-docs
 We used grill-with-docs to sharpen our understanding while creating durable documentation:
-- **Question**: What makes a skill contract effective in the qquirk system?
+- **Question**: What makes a skill contract effective in the quirk system?
   - **Exploration**: Looked at skills with clear invocation patterns
   - **Fact**: Skills with strong leading words in descriptions were invoked more reliably
   - **Decision**: Leading words should be front-loaded and repeated throughout
@@ -45,7 +45,7 @@ We used grill-with-docs to sharpen our understanding while creating durable docu
 #### Step 3: Specification with to-spec
 We created a spec issue that captured our findings:
 - **Goals**: Improve skill predictability, reduce agent confusion, maintain backward compatibility
-- **Non-goals**: Changing the fundamental qquirk method, breaking existing workflows
+- **Non-goals**: Changing the fundamental quirk method, breaking existing workflows
 - **Acceptance Criteria**:
   - All skills have checkable stop conditions
   - Side effects accurately reflect actual repository modifications
@@ -78,7 +78,7 @@ Specific improvements included:
 4. **Contract Clarity**:
    - Explicitly defining inputs and outputs with semantic meaning
    - Making dependencies intentional and minimal
-   - Using qquirk vocabulary consistently
+   - Using quirk vocabulary consistently
 
 #### Step 5: Validation and Review
 We validated our changes through the existing system:
@@ -138,15 +138,15 @@ After hardening the skills contract:
 
 1. **Start with Contracts**: When improving skills, begin by examining and improving the contracts before touching the skill body.
 
-2. **Use the Tools**: Leverage context-pack, grill-with-docs, to-spec, and the rest of the qquirk workflow even when working on the skills themselves.
+2. **Use the Tools**: Leverage context-pack, grill-with-docs, to-spec, and the rest of the quirk workflow even when working on the skills themselves.
 
 3. **Measure What Matters**: Focus on metrics that reflect actual agent experience (completion reliability, contract accuracy) rather than just line counts.
 
 4. **Iterate Gradually**: Make small, validated improvements rather than attempting massive overhauls.
 
-5. **Eat Your Own Dogfood**: Use the qquirk method to improve the qquirk method—it's the best way to validate its effectiveness.
+5. **Eat Your Own Dogfood**: Use the quirk method to improve the quirk method—it's the best way to validate its effectiveness.
 
 ### Conclusion
-Hardening the qquirk skills bundle through contract refinement demonstrated the power of applying the qquirk method to its own improvement process. By focusing on predictability through better contracts, we made the skills more reliable, transparent, and maintainable—ultimately making the entire agent-assisted development system more effective.
+Hardening the quirk skills bundle through contract refinement demonstrated the power of applying the quirk method to its own improvement process. By focusing on predictability through better contracts, we made the skills more reliable, transparent, and maintainable—ultimately making the entire agent-assisted development system more effective.
 
 The key insight was that in an agent-assisted system, the contracts between skills are as important as the skills themselves. Just as APIs define how services interact, skill contracts define how agent capabilities compose. Investing in contract quality pays dividends in system reliability and agent productivity.

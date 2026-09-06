@@ -35,7 +35,7 @@ trustTier: 2
 
 Break a plan, spec, or conversation into a set of **tickets** — tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/setup-qquirk-skills` if not.
+The issue tracker and triage label vocabulary should have been provided to you — run `/setup-quirk-skills` if not.
 The canonical work-item metadata shape is documented in [`docs/agents/work-item-format.md`](../../../docs/agents/work-item-format.md); follow it so tickets, labels, milestones, and project fields stay aligned with specs and boards.
 
 ## Contract
@@ -108,7 +108,7 @@ For corrective inputs, the user approval step may be skipped only when the audit
 
 ### 5. Publish the tickets to the configured tracker
 
-Publish the approved tickets. **How** depends on the tracker `/setup-qquirk-skills` configured — the tickets are the same either way, only the shape of the blocking edges changes:
+Publish the approved tickets. **How** depends on the tracker `/setup-quirk-skills` configured — the tickets are the same either way, only the shape of the blocking edges changes:
 
 - **Local files** → write one file per ticket under `.scratch/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01` in dependency order (blockers first). Each file's "Blocked by" lists the numbers/titles it depends on. Use `references/issue-template.md` for the per-ticket shape — one ticket per file, never a single combined file.
 - **A real issue tracker (GitHub, Linear, …)** → publish one issue per ticket in dependency order (blockers first) so each ticket's blocking edges can reference real identifiers. When the input came from `/to-spec`, create the tickets as subissues of that spec issue so the execution tree stays attached to the published spec. Use the platform's native blocking / sub-issue relationship where it has one; otherwise set each ticket's "Blocked by" to the blocking issues. Apply the tracker defaults from `docs/agents/issue-tracker.md`: for this repo that means `ready-for-agent` plus any justified area or priority labels inherited from the source spec or parent issue. The ticket body itself must also be written in English and should preserve this repo's vocabulary rather than backsliding to generic trading wording.

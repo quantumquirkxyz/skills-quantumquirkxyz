@@ -1,6 +1,6 @@
 # Stack Specialization Matrix
 
-Use this matrix when adapting qquirk Skills to a project stack.
+Use this matrix when adapting quirk Skills to a project stack.
 
 ```mermaid
 flowchart TD

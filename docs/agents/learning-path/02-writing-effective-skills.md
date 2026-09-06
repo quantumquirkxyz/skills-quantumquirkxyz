@@ -1,10 +1,10 @@
-# Writing Effective qquirk Skills
+# Writing Effective quirk Skills
 
 ## Learning Path Level 2: Skill Authoring Mastery
 
 ### Beyond Basic Syntax: The Art of Predictable Skills
 
-Creating effective qquirk skills is less about following syntax rules and more about cultivating predictability in agent behavior. This guide builds on the fundamentals to teach you how to create skills that agents can rely on.
+Creating effective quirk skills is less about following syntax rules and more about cultivating predictability in agent behavior. This guide builds on the fundamentals to teach you how to create skills that agents can rely on.
 
 ### The Predictability Principle
 
@@ -123,7 +123,7 @@ Think about how your skill will be evaluated from the start:
 
 ### Template for Effective Skills
 
-Here's what an excellently designed qquirk skill looks like:
+Here's what an excellently designed quirk skill looks like:
 
 ```
 ---
@@ -196,4 +196,4 @@ After mastering skill authoring, proceed to:
 - Level 4: Creating platform skills that shape technical decisions
 - Level 5: Designing workflow patterns that orchestrate complex processes
 
-Remember: The best qquirk skills aren't the most feature-rich—they're the ones that agents can rely on to do the same thoughtful process every time, producing artifacts that other skills can depend on.
+Remember: The best quirk skills aren't the most feature-rich—they're the ones that agents can rely on to do the same thoughtful process every time, producing artifacts that other skills can depend on.

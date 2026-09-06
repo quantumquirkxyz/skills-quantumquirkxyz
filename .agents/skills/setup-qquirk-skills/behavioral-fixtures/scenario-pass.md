@@ -1,4 +1,4 @@
-# Scenario: setup-qquirk-skills pass
+# Scenario: setup-quirk-skills pass
 
-Input: typical invocation for setup-qquirk-skills.
+Input: typical invocation for setup-quirk-skills.
 Expected: skill produces its declared output without errors.

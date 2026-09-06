@@ -53,7 +53,7 @@ Capability: ________________________
 
 ## Worksheet 2.1: Skill Contract Design
 ```
-Description (following qquirk skill-style-guide):
+Description (following quirk skill-style-guide):
 _________________________________________________________
 _________________________________________________________
 _________________________________________________________

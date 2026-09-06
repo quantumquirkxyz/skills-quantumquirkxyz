@@ -3,9 +3,9 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: install-qquirk-skills.sh <target-repo-path> [source-repo-path]
+Usage: install-quirk-skills.sh <target-repo-path> [source-repo-path]
 
-Copies the qquirk skills bundle into <target-repo-path>.
+Copies the quirk skills bundle into <target-repo-path>.
 If source-repo-path is omitted, the script uses the directory containing this script.
 EOF
 }
@@ -41,4 +41,4 @@ copy_path "$source_repo/docs/adr/README.md" "$target_repo/docs/adr/README.md"
 copy_path "$source_repo/CONTEXT.md" "$target_repo/CONTEXT.md"
 copy_path "$source_repo/skills-lock.json" "$target_repo/skills-lock.json"
 
-echo "Installed qquirk Skills into $target_repo"
+echo "Installed quirk Skills into $target_repo"

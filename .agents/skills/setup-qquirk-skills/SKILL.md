@@ -1,5 +1,5 @@
 ---
-name: setup-qquirk-skills
+name: setup-quirk-skills
 description: Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.
 disable-model-invocation: true
 version: 1
@@ -23,9 +23,9 @@ risk: medium
 trustTier: 3
 ---
 
-# Setup Qquirk Skills
+# Setup Quirk Skills
 
-Scaffold the per-repo configuration that the qquirk engineering skills assume for the current repository:
+Scaffold the per-repo configuration that the quirk engineering skills assume for the current repository:
 
 - **Issue tracker** — where issues live (GitHub by default; local markdown is also supported out of the box)
 - **Triage labels** — the strings used for the five canonical triage roles

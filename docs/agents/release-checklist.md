@@ -1,6 +1,6 @@
 # Release Checklist
 
-Use this checklist before publishing a new qquirk Skills version.
+Use this checklist before publishing a new quirk Skills version.
 
 ```mermaid
 flowchart TD

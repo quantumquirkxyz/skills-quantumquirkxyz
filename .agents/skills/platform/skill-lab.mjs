@@ -327,7 +327,7 @@ async function tutorial() {
   const requested = process.argv[3]; if (!requested) throw new Error('tutorial requires a skill name');
   const file = requested.endsWith('.md') ? path.resolve(root, requested) : path.join(skillsRoot, requested, 'SKILL.md');
   const fm = normalizedManifest(await manifest(file));
-  const learnerContext = optionValue('--learner-context', 'a contributor learning the qquirk method');
+  const learnerContext = optionValue('--learner-context', 'a contributor learning the quirk method');
   console.log(`# Tutorial: ${fm.name}\n\n${fm.description}\n\n## Learner context\n\n${learnerContext}\n\n## Learning goals\n\n${listValue(fm.capabilities).map((x) => `- ${x}`).join('\n')}\n\n## Exercise\n\nProvide an input satisfying: ${listValue(fm.inputs).join(', ') || 'the documented contract'}.\n\n## Expected result\n\n${listValue(fm.outputs).map((x) => `- ${x}`).join('\n')}\n\n## Checkpoint\n\n${fm.stopCondition || 'Confirm the output and validation evidence.'}\n\n## Learner response\n\nRecord the input, output, and validation evidence before continuing.\n`);
 }
 async function metrics() {
@@ -355,7 +355,7 @@ async function metrics() {
   json({ samples: records.length, durationAvailable: records.length > 0, averageDurationMs: records.length ? Math.round(average) : null, successRate: records.length ? records.filter((x) => ['pass', 'success'].includes(x.status)).length / records.length : null, skillComplexity, records });
 }
 async function playground() {
-  const output = path.resolve(root, optionValue('--output', path.join(os.tmpdir(), 'qquirk-skill-playground')));
+  const output = path.resolve(root, optionValue('--output', path.join(os.tmpdir(), 'quirk-skill-playground')));
   if (output === root || !output.startsWith(`${os.tmpdir()}${path.sep}`)) throw new Error('output must be a disposable directory under the system temp directory');
   const tempRoot = await fs.realpath(os.tmpdir());
   const outputParent = await fs.realpath(path.dirname(output));

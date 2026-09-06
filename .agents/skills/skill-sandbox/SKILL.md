@@ -77,7 +77,7 @@ Validate the experimental skill without affecting the main bundle:
 
 Ensure the experimental skill meets quality benchmarks:
 - Compare against similar canonical skills for consistency
-- Verify proper use of qquirk vocabulary from CONTEXT.md and qquirk-method.md
+- Verify proper use of quirk vocabulary from CONTEXT.md and quirk-method.md
 - Check that artifact templates (if any) follow established patterns
 - Confirm that dependencies are correctly declared and resolvable
 - Validate that the skill manifest conforms to the platform schema

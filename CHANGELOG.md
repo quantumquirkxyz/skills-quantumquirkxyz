@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `qquirk Skills` are recorded here.
+All notable changes to `quirk Skills` are recorded here.
 
 This project follows semantic versioning once releases are cut:
 
@@ -10,12 +10,12 @@ This project follows semantic versioning once releases are cut:
 
 ## 0.1.0 - 2026-08-27
 
-Initial qquirk-owned skills bundle baseline.
+Initial quirk-owned skills bundle baseline.
 
 ### Added
 
 - Canonical `.agents/skills/` bundle with `.claude/skills/` compatibility links.
-- qquirk method, authorship, provenance, adoption, and template-standard docs.
+- quirk method, authorship, provenance, adoption, and template-standard docs.
 - Scenario evaluation fixtures and deterministic scenario runner.
 - Semantic audit runner and unified platform validation commands.
 - Internal case-study structure.

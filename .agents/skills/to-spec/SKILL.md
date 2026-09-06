@@ -30,7 +30,7 @@ trustTier: 2
 
 This skill takes the current conversation context and codebase understanding and produces a spec (you may know this document as a PRD). Do NOT interview the user — just synthesize what you already know. Write the published issue body in English, and use the this repo's vocabulary consistently.
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/setup-qquirk-skills` if not.
+The issue tracker and triage label vocabulary should have been provided to you — run `/setup-quirk-skills` if not.
 The canonical work-item metadata shape is documented in [`docs/agents/work-item-format.md`](../../../docs/agents/work-item-format.md); follow it for labels, milestone, project, fields, and todo/acceptance structure.
 
 ## Contract

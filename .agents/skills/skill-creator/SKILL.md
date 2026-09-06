@@ -1,6 +1,6 @@
 ---
 name: skill-creator
-description: Enhanced guide for creating effective qquirk skills with structured worksheets, validation integration, and template generation.
+description: Enhanced guide for creating effective quirk skills with structured worksheets, validation integration, and template generation.
 version: 3
 capabilities:
   - guide-structured-skill-conception
@@ -30,16 +30,16 @@ risk: low
 trustTier: 2
 ---
 
-# Enhanced Skill Creator for qquirk Skills
+# Enhanced Skill Creator for quirk Skills
 
-This skill provides a structured, worksheet-based approach to creating effective qquirk skills that integrate seamlessly with the existing skills bundle, evaluation system, and validation infrastructure.
+This skill provides a structured, worksheet-based approach to creating effective quirk skills that integrate seamlessly with the existing skills bundle, evaluation system, and validation infrastructure.
 
 ## Contract
 
 - Input: raw skill concept, target domain, intended users
 - Output: completed skill design worksheet, validated skill concept, generated skill template, validation integration plan, and documentation outline
-- Scope: structured skill creation process specifically for the qquirk skills ecosystem
-- Rule: all generated skills must be compatible with the qquirk method and validation system
+- Scope: structured skill creation process specifically for the quirk skills ecosystem
+- Rule: all generated skills must be compatible with the quirk method and validation system
 - Rule: skills must follow the progressive disclosure principle and explicit contract design
 - Rule: generated skills should be testable using the evaluate-skill system
 
@@ -104,7 +104,7 @@ Capability: ________________________
 
 #### Worksheet 2.1: Skill Contract Design
 ```
-Description (following qquirk skill-style-guide):
+Description (following quirk skill-style-guide):
 _________________________________________________________
 _________________________________________________________
 _________________________________________________________
@@ -231,7 +231,7 @@ If improvement, which existing skill(s) does it relate to? N/A
 
 ### Example: Completed Worksheet 2.1 (for the same skill)
 ```
-Description (following qquirk skill-style-guide):
+Description (following quirk skill-style-guide):
 This skill analyzes API diffs to determine appropriate versioning strategy following semantic versioning principles. Use when you need to understand the impact of API changes and get explicit guidance on version numbers.
 
 Explicit Inputs (what the skill consumes):
@@ -288,7 +288,7 @@ The user has completed this skill when:
 - Always validate skill concepts against existing skills to prevent duplication
 - Design skills to be minimal and focused - prefer creating multiple small skills over one large one
 - Ensure skills can be tested in isolation using the sandbox environment
-- Follow the qquirk method principles rigorously in skill design
+- Follow the quirk method principles rigorously in skill design
 - Consider how the skill fits into larger workflows before creating it
 - Remember that predictability is the root virtue - design for consistent behavior
 - Use the worksheets to ensure explicit, checkable decisions at each step

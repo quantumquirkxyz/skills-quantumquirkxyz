@@ -2,7 +2,7 @@
 
 This file classifies active skills by provenance status. Use `docs/agents/provenance.md` for retired names and naming rationale.
 
-## Original qquirk System Skills
+## Original quirk System Skills
 
 - `ask-to`
 - `project-development`
@@ -16,7 +16,7 @@ This file classifies active skills by provenance status. Use `docs/agents/proven
 - `knowledge-curator`
 - `docs-management`
 
-## qquirk Delivery Workflow
+## quirk Delivery Workflow
 
 - `to-spec`
 - `to-tickets`
@@ -30,7 +30,7 @@ This file classifies active skills by provenance status. Use `docs/agents/proven
 - `make-project`
 - `work-item-router`
 
-## qquirk Design and Quality Skills
+## quirk Design and Quality Skills
 
 - `domain-modeling`
 - `codebase-design`

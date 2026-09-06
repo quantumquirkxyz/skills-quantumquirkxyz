@@ -1,6 +1,6 @@
 ---
 name: <skill-name>
-description: <One-sentence description following qquirk skill-style-guide - states what the skill does and when to use it>
+description: <One-sentence description following quirk skill-style-guide - states what the skill does and when to use it>
 version: 1
 capabilities:
   - <capability-name-1>

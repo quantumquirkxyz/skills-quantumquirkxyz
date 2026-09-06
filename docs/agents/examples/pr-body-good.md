@@ -2,7 +2,7 @@
 
 ## Summary
 
-Adds a deterministic semantic audit to the qquirk skills platform.
+Adds a deterministic semantic audit to the quirk skills platform.
 
 ## Why
 

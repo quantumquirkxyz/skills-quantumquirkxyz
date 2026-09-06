@@ -1,12 +1,12 @@
-# qquirk Method
+# quirk Method
 
-The `qquirk` method is a workflow for agent-assisted project development. It is designed for repositories where work must move from ambiguous intent to reviewed delivery without losing context, widening scope, or hiding risk.
+The `quirk` method is a workflow for agent-assisted project development. It is designed for repositories where work must move from ambiguous intent to reviewed delivery without losing context, widening scope, or hiding risk.
 
 ## Principles
 
 ```mermaid
 mindmap
-    root((qquirk method))
+    root((quirk method))
         Context before action
         Questions before commitments
         Artifacts over vibes
@@ -43,7 +43,7 @@ mindmap
 
 ```mermaid
 flowchart TD
-    A[setup-qquirk-skills] --> B[ask-to]
+    A[setup-quirk-skills] --> B[ask-to]
     B --> C[grill-with-docs]
     C --> D[to-spec]
     D --> E[to-tickets]
@@ -73,7 +73,7 @@ flowchart TD
 
 ## Quality Bar
 
-A qquirk artifact is acceptable when it answers:
+A quirk artifact is acceptable when it answers:
 
 | Question | Why it matters |
 |---|---|
