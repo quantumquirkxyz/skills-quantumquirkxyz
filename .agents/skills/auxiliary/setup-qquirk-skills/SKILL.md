@@ -1,5 +1,5 @@
 ---
-name: setup-quirk-skills
+name: setup-qquirk-skills
 description: Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.
 disable-model-invocation: true
 version: 1
@@ -22,6 +22,17 @@ stopCondition: The repo-specific skill configuration is written and consistent.
 risk: medium
 trustTier: 3
 ---
+
+## Contract
+
+- **Input:** problem or task defined by the skill body.
+- **Output:** Markdown artifact or structured result with completion criteria met.
+- **Side effects:** none (design/review/documentation only unless explicitly stated).
+- **Dependencies:** none (self-contained unless linked to other skills).
+- **Stop condition:** all process steps completed; artifact saved; criteria checked.
+- **Risk:** low.
+- **Boundary:** produces reasoning or documentation artifacts; does not modify external systems unless explicitly instructed.
+
 
 # Setup Quirk Skills
 

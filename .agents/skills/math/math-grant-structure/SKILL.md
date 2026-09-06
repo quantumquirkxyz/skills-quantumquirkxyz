@@ -88,4 +88,29 @@ For each aim, state:
 
 Write the critique as if reviewing:
 
-- **Strengths** —
+- **Strengths** — what makes the proposal stand out; which aims are most credible; which broader impacts are most concrete.
+- **Weaknesses** — where the logic is thin; which budget items are under-justified; where the timeline is unrealistic.
+- **Questions** — what the reviewer would ask; write answers in advance.
+- **Verdict** — recommend approve / revise / decline, with explicit conditions.
+
+**Completion criterion:** critique written with strengths, weaknesses, questions, verdict.
+
+### 6. Submission checklist
+
+- [ ] All required sections present and within page limits.
+- [ ] Biosketch / CV updated and formatted.
+- [ ] Budget justification matches budget table.
+- [ ] Data-management plan saved.
+- [ ] References complete (no missing citations).
+- [ ] All co-PIs have confirmed contribution.
+- [ ] Letters of collaboration / support saved.
+- [ ] Proposal compiled to PDF with correct margins and fonts.
+- [ ] Submitted by deadline; confirmation saved.
+
+**Completion criterion:** all boxes checked; checklist saved.
+
+### 7. Deliver
+
+Markdown artifact with: call analysis, programme, aims mapping, budget, timeline, reviewer critique (strengths/weaknesses/questions/verdict), submission checklist.
+
+**Completion criterion:** deliverable complete and reviewed by at least one co-author or mentor before submission.

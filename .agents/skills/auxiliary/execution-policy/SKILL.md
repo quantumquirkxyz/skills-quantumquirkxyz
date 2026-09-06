@@ -22,6 +22,17 @@ risk: low
 trustTier: 2
 ---
 
+## Contract
+
+- **Input:** problem or task defined by the skill body.
+- **Output:** Markdown artifact or structured result with completion criteria met.
+- **Side effects:** none (design/review/documentation only unless explicitly stated).
+- **Dependencies:** none (self-contained unless linked to other skills).
+- **Stop condition:** all process steps completed; artifact saved; criteria checked.
+- **Risk:** low.
+- **Boundary:** produces reasoning or documentation artifacts; does not modify external systems unless explicitly instructed.
+
+
 # Execution Policy
 
 This skill is advisory only. It does not change repository state or perform the action it judges.

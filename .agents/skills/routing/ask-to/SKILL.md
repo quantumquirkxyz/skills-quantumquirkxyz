@@ -4,7 +4,29 @@ category: routing
 maturity: stable
 version: 1
 description: Ask which skill or flow fits your situation. A router over the skills in this repo that recommends the next step without
+capabilities:
+  - execute the core process defined in the skill body
+  - produce a Markdown artifact or structured result
+outputs:
+  - Markdown artifact with process steps and completion criteria
+sideEffects: []
+dependencies: []
+stopCondition: All process steps executed; artifact saved; criteria met.
+risk: low
+trustTier: 1
+maxIterations: 6
 ---
+
+## Contract
+
+- **Input:** problem or task defined by the skill body.
+- **Output:** Markdown artifact or structured result with completion criteria met.
+- **Side effects:** none (design/review/documentation only unless explicitly stated).
+- **Dependencies:** none (self-contained unless linked to other skills).
+- **Stop condition:** all process steps completed; artifact saved; criteria checked.
+- **Risk:** low.
+- **Boundary:** produces reasoning or documentation artifacts; does not modify external systems unless explicitly instructed.
+
 
 # Ask To
 
