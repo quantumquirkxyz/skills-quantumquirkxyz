@@ -4,6 +4,19 @@ The `qquirk` method is a workflow for agent-assisted project development. It is 
 
 ## Principles
 
+```mermaid
+mindmap
+    root((qquirk method))
+        Context before action
+        Questions before commitments
+        Artifacts over vibes
+        Vertical slices over horizontal dumps
+        Measurement before repair
+        Branch-state before repair
+        Repo-local specialization
+        Fail closed on uncertainty
+```
+
 - **Context before action.** Build a fresh context pack before broad work. Prefer repo docs, ADRs, issue tracker state, and direct code evidence over memory.
 - **Questions before commitments.** Use `grill` or `grill-with-docs` when the work is ambiguous. Decisions are made with the user, not guessed.
 - **Artifacts over vibes.** Specs, tickets, PR bodies, review plans, implementation notes, ADRs, and handoffs must be durable enough for another agent to consume later, and each artifact shape should belong to the skill that emits it.
@@ -15,48 +28,61 @@ The `qquirk` method is a workflow for agent-assisted project development. It is 
 
 ## Vocabulary
 
-- **Context pack:** a bounded set of fresh reads and provenance that gives the next skill enough evidence to act.
-- **Domain language:** the project's chosen terms, recorded in `CONTEXT.md` and ADRs.
-- **Seam:** the public boundary where design, implementation, testing, or operations become explicit.
-- **Tracer bullet:** a ticket that makes one narrow end-to-end behavior work.
-- **Frontier:** tickets that are unblocked and claimable now.
-- **Review axis:** one of the two independent review dimensions: Standards and Spec.
-- **Repair plan:** a durable PR comment that converts findings into scoped, validated fixes.
-- **Ship state:** the state where review is clean, validation is known, and linked work can be merged or completed.
+| Term | Meaning |
+|---|---|
+| **Context pack** | A bounded set of fresh reads and provenance for the next skill |
+| **Domain language** | The project's chosen terms, recorded in `CONTEXT.md` and ADRs |
+| **Seam** | The public boundary where design, implementation, testing, or operations become explicit |
+| **Tracer bullet** | A ticket that makes one narrow end-to-end behavior work |
+| **Frontier** | Tickets that are unblocked and claimable now |
+| **Review axis** | One of two independent review dimensions: Standards or Spec |
+| **Repair plan** | A durable PR comment that converts findings into scoped, validated fixes |
+| **Ship state** | Review is clean, validation is known, and linked work can be merged or completed |
 
 ## Canonical Flow
 
-```text
-setup-qquirk-skills
--> ask-to
--> grill-with-docs
--> to-spec
--> to-tickets
--> implement
--> publish-open-pr
--> review-pr
--> review-fix-loop when needed
--> ship-subissue after clean review
+```mermaid
+flowchart TD
+    A[setup-qquirk-skills] --> B[ask-to]
+    B --> C[grill-with-docs]
+    C --> D[to-spec]
+    D --> E[to-tickets]
+    E --> F[implement]
+    F --> G[publish-open-pr]
+    G --> H[review-pr]
+    H --> I{findings?}
+    I -->|yes| J[review-fix-loop]
+    J --> H
+    I -->|no| K[ship-subissue]
 ```
 
 ## Alternate Entry Points
 
-- Use `project-development` when the project's shape or stack is not yet clear.
-- Use `wayfinder` when the effort is too large or foggy for one session.
-- Use `triage` when raw issues or external PRs need classification.
-- Use `diagnosing-bugs` when the failure needs a tight reproduction loop.
-- Use stack skills such as `nextjs`, `react`, `postgres`, `auth`, `deployment`, and `monitoring-alerting` when a specific technical surface needs sharper constraints.
+| Skill | When to use |
+|---|---|
+| `project-development` | Project shape or stack is not yet clear |
+| `wayfinder` | Effort is too large for one session |
+| `triage` | Raw issues or external PRs need classification |
+| `diagnosing-bugs` | Failure needs a tight reproduction loop |
+| `nextjs` | Next.js app surface needs sharper constraints |
+| `react` | React component structure needs sharper constraints |
+| `postgres` | PostgreSQL schema needs sharper constraints |
+| `auth` | Auth boundary needs sharper constraints |
+| `deployment` | Deployment needs sharper constraints |
+| `monitoring-alerting` | Monitoring needs sharper constraints |
 
 ## Quality Bar
 
 A qquirk artifact is acceptable when it answers:
 
-- What is the source of truth?
-- What is in scope?
-- What is explicitly out of scope?
-- Who or what consumes this artifact next?
-- What evidence proves it is done?
-- What risk remains?
+| Question | Why it matters |
+|---|---|
+| What is the source of truth? | Prevents drift and duplication |
+| What is in scope? | Keeps slices narrow and claimable |
+| What is explicitly out of scope? | Surfaces risk early |
+| Who or what consumes this artifact next? | Makes handoffs durable |
+| What evidence proves it is done? | Enables clean review and ship |
+| What risk remains? | Preserves uncertainty for the next step |
 
 If an artifact cannot answer those questions, improve the artifact before routing it downstream.
 
@@ -64,8 +90,10 @@ If an artifact cannot answer those questions, improve the artifact before routin
 
 The method is maintained by executable checks:
 
-- `validate-skills.mjs` checks bundle parity and lock coverage.
-- `audit-semantics.mjs` checks semantic drift, retired names, weak templates, links, and risk signals.
-- `evaluate-scenarios.mjs` checks workflow route expectations.
-- `evaluate-behavioral-fixtures.mjs` checks representative artifact shape.
-- `check-all.mjs` runs the full local gate.
+| Check | Purpose |
+|---|---|
+| `validate-skills.mjs` | Bundle parity and lock coverage |
+| `audit-semantics.mjs` | Semantic drift, retired names, weak templates, links, risk signals |
+| `evaluate-scenarios.mjs` | Workflow route expectations |
+| `evaluate-behavioral-fixtures.mjs` | Representative artifact shape |
+| `check-all.mjs` | Full local gate |
