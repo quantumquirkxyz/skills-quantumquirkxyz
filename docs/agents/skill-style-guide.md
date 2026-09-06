@@ -2,6 +2,16 @@
 
 Use this guide when editing or adding qquirk Skills.
 
+```mermaid
+flowchart LR
+    A[Edit skill] --> B[Check frontmatter]
+    B --> C[Check body shape]
+    C --> D[Check language]
+    D --> E[Check templates]
+    E --> F[Run check-all.mjs]
+    F --> G[Publish]
+```
+
 ## Frontmatter
 
 - `name` matches the folder name.
