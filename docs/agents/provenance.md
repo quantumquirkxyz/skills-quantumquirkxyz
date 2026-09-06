@@ -68,6 +68,15 @@ The point is not to hide influence. It is to turn influence into a distinct quir
 - **Method:** contracts added (capabilities, outputs, stopCondition, risk, trustTier, Boundary), validated lot-by-lot, promoted via copy + symlink.
 - **Status:** canonical bundle updated; provenance recorded.
 
+## 2026-09 — Second promotion (Math + Physics specialist skills)
+
+- **Source:** `.skill-sandbox/` (experimental)
+- **Outcome:** 15 new skills promoted to `.agents/skills/` with `.claude/skills/` symlinks.
+- **Validation:** all 15 passed `skill-lab.mjs validate --json`; 0 failures.
+- **Categories:** Math (7: literature-track, formal-proof, computation-reproducible, teaching-problem-set, grant-structure, presentation-beamer, paper-collaboration); Physics (8: literature-search, experimental-notebook, simulation-setup, data-analysis-root, writing-revtex, talk-design, career-postdoc, reproducibility-archive).
+- **Method:** contracts completed (capabilities/outputs/stopCondition/risk/trustTier/Boundary), validated lot-by-lot, promoted via copy + symlink.
+- **Status:** canonical bundle updated; provenance recorded.
+
 ## Maintenance Rule
 
 When adding, renaming, or retiring a skill:

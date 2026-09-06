@@ -207,3 +207,30 @@ Provenance: `docs/agents/provenance.md` section "2026-09 — Sandbox-to-canonica
 | `code-review` | Review changes against Standards and Spec |
 | `wayfinder` | Plan huge work as a map of decision tickets |
 | `writing-great-skills` | Reference for writing and editing skills |
+
+## New Domain Skills — Second Promotion (Math + Physics specialist) 2026-09
+
+Validated via `skill-lab.mjs validate --json` (15 PASS, 0 FAIL) and promoted to `.agents/skills/` with `.claude/skills/` symlinks.
+
+### Math specialist (7)
+| Skill | Domain / Subfield |
+|---|---|
+| `math-literature-track` | arXiv, MathSciNet, citation alerts |
+| `math-formal-proof` | Lean/Coq/Isabelle/Agda proof development |
+| `math-computation-reproducible` | SymPy/Mathematica/Magma/Sage/Julia + container |
+| `math-teaching-problem-set` | Problem-set / exam design + rubric |
+| `math-grant-structure` | NSF/ERC/Simons proposal drafting |
+| `math-presentation-beamer` | Beamer / TikZ / speaker notes |
+| `math-paper-collaboration` | Overleaf/GitHub collaboration + arXiv package |
+
+### Physics specialist (8)
+| Skill | Domain / Subfield |
+|---|---|
+| `physics-literature-search` | arXiv hep-th/cond-mat/astro-ph + INSPIRE + ADS |
+| `physics-experimental-notebook` | Lab notebook / FAIR data / calibration |
+| `physics-simulation-setup` | GEANT4, LAMMPS, VASP, QuTiP container |
+| `physics-data-analysis-root` | ROOT / pandas / uproot + calibration / errors |
+| `physics-writing-revtex` | RevTeX / APS / IOP / AIP formatting |
+| `physics-talk-design` | Seminar / poster / public talk |
+| `physics-career-postdoc` | Postdoc / faculty / grant applications |
+| `physics-reproducibility-archive` | Zenodo DOI + GitHub release + FAIR checklist |
