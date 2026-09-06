@@ -20,6 +20,7 @@ dependencies:
 sideEffects: []
 stopCondition: The changed Skills have prioritized findings and explicit validation recommendations.
 risk: low
+trustTier: 2
 ---
 
 # Contribution Workflow Optimizer

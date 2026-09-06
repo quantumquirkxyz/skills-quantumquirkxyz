@@ -23,7 +23,9 @@ dependencies:
 sideEffects:
   - write-issue
 stopCondition: The spec is published and the implementation decisions are explicit.
-risk: medium
+risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 This skill takes the current conversation context and codebase understanding and produces a spec (you may know this document as a PRD). Do NOT interview the user — just synthesize what you already know. Write the published issue body in English, and use the this repo's vocabulary consistently.

@@ -17,6 +17,8 @@ sideEffects:
   - write-throwaway-code
 stopCondition: The design question is answered by a throwaway prototype.
 risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Prototype

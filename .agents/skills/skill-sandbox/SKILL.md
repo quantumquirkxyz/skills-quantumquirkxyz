@@ -27,6 +27,8 @@ sideEffects:
   - write-docs
 stopCondition: The experimental skill has been created, tested, validated, and a promotion decision has been made.
 risk: medium
+maxIterations: 3
+trustTier: 3
 ---
 
 # Skill Sandbox

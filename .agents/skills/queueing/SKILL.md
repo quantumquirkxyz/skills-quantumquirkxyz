@@ -20,7 +20,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The queue seam, retry policy, and recovery posture are explicit enough to implement safely.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Queueing

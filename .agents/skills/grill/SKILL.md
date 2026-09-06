@@ -19,6 +19,7 @@ sideEffects:
   - question-only
 stopCondition: The current decision tree is sharpened enough to move forward or hand off.
 risk: low
+trustTier: 2
 ---
 
 # Grill

@@ -19,6 +19,8 @@ sideEffects:
   - close-issue
 stopCondition: The PR is merged and the linked issue is closed or marked complete.
 risk: medium
+maxIterations: 3
+trustTier: 3
 ---
 
 # Ship Subissue

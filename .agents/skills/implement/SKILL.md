@@ -21,6 +21,8 @@ sideEffects:
   - run-tests
 stopCondition: The ticket's acceptance criteria are met and validated locally.
 risk: medium
+trustTier: 3
+maxIterations: 10
 ---
 
 Implement the work described by the user in the spec or tickets.

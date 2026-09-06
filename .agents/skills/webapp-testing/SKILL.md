@@ -21,6 +21,8 @@ sideEffects:
   - read-only
 stopCondition: The test seam and verification strategy are clear enough to implement without guessing.
 risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Webapp Testing

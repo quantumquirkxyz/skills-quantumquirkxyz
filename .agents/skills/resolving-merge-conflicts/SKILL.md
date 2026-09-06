@@ -18,6 +18,8 @@ sideEffects:
   - write-code
 stopCondition: The blocked branch state is resolved in the most reasonable way without inventing new behavior or distorting the PR's changes.
 risk: medium
+maxIterations: 3
+trustTier: 3
 ---
 
 1. **See the current state** of the branch. Check git history, the conflicting files, and whether the block came from a merge/rebase, from changes made while answering review requests on a PR branch, or from a branch-side correction needed to keep the PR moving.

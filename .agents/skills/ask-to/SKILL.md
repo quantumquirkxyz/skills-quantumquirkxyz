@@ -21,6 +21,7 @@ sideEffects:
   - recommend-only
 stopCondition: A single best next skill path is identified with rationale.
 risk: low
+trustTier: 2
 ---
 
 # Ask To

@@ -17,6 +17,8 @@ sideEffects:
   - question-only
 stopCondition: Shared understanding is reached for the current decision tree.
 risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 Interview me relentlessly about every aspect of this until we reach a shared understanding. Walk down each branch of the decision tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.

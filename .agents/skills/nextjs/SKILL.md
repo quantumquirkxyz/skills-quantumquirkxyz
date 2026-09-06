@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: The route structure and server/client seam are explicit enough to implement or review.
 risk: low
+trustTier: 2
 ---
 
 # Next.js

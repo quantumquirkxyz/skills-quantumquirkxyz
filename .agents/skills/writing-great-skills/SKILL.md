@@ -17,6 +17,7 @@ sideEffects:
   - read-only
 stopCondition: The skill text is made more predictable or the guidance is applied.
 risk: low
+trustTier: 2
 ---
 
 A skill exists to wrangle determinism out of a stochastic system. **Predictability** — the agent taking the same _process_ every run, not producing the same output — is the root virtue; every lever below serves it.

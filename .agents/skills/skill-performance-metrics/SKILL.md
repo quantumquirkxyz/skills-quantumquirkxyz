@@ -18,6 +18,7 @@ dependencies:
 sideEffects: []
 stopCondition: A report contains sample count, average duration, and success rate or clearly states that data is unavailable.
 risk: low
+trustTier: 2
 ---
 
 # Skill Performance Metrics

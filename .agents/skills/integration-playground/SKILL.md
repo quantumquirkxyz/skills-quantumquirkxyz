@@ -19,7 +19,8 @@ dependencies:
 sideEffects:
   - write-files
 stopCondition: The command ran in the disposable fixture directory and its exit status and output are recorded.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Integration Playground

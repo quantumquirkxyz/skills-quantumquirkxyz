@@ -14,6 +14,7 @@ dependencies:
 sideEffects: []
 stopCondition: The canonical governance index has been read and the matching downstream skill is identified.
 risk: low
+trustTier: 2
 ---
 
 This skill routes only. It does not create issues, tickets, PRs, or project items.

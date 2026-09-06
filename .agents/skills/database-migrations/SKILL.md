@@ -19,7 +19,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The migration sequence and rollback path are clear enough to execute safely.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Database Migrations

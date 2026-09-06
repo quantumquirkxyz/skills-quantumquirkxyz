@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: The contract shape and compatibility rules are explicit enough to implement or review.
 risk: low
+trustTier: 2
 ---
 
 # API Contracts

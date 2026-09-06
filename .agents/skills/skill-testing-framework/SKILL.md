@@ -20,6 +20,7 @@ dependencies:
 sideEffects: []
 stopCondition: The target Skill has a pass/fail report with every structural and contract check accounted for.
 risk: low
+trustTier: 2
 ---
 
 # Skill Testing Framework

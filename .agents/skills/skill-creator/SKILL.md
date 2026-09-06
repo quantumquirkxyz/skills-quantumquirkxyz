@@ -27,6 +27,7 @@ sideEffects:
   - write-docs
 stopCondition: The user has completed a skill design worksheet, generated a skill template from it, and validated the concept using sandbox tools.
 risk: low
+trustTier: 2
 ---
 
 # Enhanced Skill Creator for qquirk Skills

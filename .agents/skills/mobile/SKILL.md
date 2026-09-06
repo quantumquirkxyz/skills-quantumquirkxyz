@@ -20,7 +20,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The mobile seam, device flow, and offline boundary are explicit enough to implement or review.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Mobile

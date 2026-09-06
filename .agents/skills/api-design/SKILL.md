@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: The API seam and contract are concrete enough to implement or review.
 risk: low
+trustTier: 2
 ---
 
 # API Design

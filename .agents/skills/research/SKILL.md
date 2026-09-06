@@ -15,6 +15,8 @@ sideEffects:
   - write-docs
 stopCondition: The findings are captured in a cited Markdown note from primary sources.
 risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 Spin up a **background agent** to do the research, so you keep working while it reads.

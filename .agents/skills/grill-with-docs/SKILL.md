@@ -21,6 +21,8 @@ sideEffects:
   - write-docs
 stopCondition: The plan is sharpened and the durable docs are updated inline.
 risk: medium
+maxIterations: 5
+trustTier: 3
 ---
 
 Run a `/grilling` session, using the `/domain-modeling` skill.

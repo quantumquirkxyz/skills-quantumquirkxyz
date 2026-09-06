@@ -20,6 +20,8 @@ sideEffects:
   - write-tracker
 stopCondition: Review is clean or the loop is blocked after repeated evidence.
 risk: medium
+trustTier: 3
+maxIterations: 5
 ---
 
 Do not merge, close, or delete branches here; this skill coordinates the loop only.

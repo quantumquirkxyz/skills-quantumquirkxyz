@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: The component shape and state boundary are explicit enough to implement or review.
 risk: low
+trustTier: 2
 ---
 
 # React

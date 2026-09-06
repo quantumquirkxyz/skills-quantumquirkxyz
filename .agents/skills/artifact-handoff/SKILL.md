@@ -16,6 +16,7 @@ sideEffects:
   - read-only
 stopCondition: The artifact validates against the shared envelope and the next consumer is explicit.
 risk: low
+trustTier: 2
 ---
 
 # Artifact Handoff

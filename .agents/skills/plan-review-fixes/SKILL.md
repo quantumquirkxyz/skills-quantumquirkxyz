@@ -16,7 +16,9 @@ dependencies:
 sideEffects:
   - write-pr-comment
 stopCondition: A durable Review Fix Plan comment is posted.
-risk: medium
+risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Plan Review Fixes

@@ -21,6 +21,8 @@ sideEffects:
   - write-tracker
 stopCondition: The item is in a stable triage state with a durable brief if needed.
 risk: medium
+maxIterations: 5
+trustTier: 3
 ---
 
 # Triage

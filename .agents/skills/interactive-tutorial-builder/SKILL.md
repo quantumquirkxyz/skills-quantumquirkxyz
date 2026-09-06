@@ -18,6 +18,7 @@ dependencies:
 sideEffects: []
 stopCondition: The learner has a runnable exercise and a checkable checkpoint derived from the target Skill contract.
 risk: low
+trustTier: 2
 ---
 
 # Interactive Tutorial Builder

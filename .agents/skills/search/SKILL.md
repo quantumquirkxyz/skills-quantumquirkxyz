@@ -20,7 +20,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The search seam, indexing approach, and relevance controls are explicit enough to implement or review.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Search

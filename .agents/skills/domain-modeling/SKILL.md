@@ -18,6 +18,7 @@ sideEffects:
   - write-docs
 stopCondition: The domain term is resolved or the ADR is drafted and reflected in the glossary.
 risk: medium
+trustTier: 3
 ---
 
 # Domain Modeling

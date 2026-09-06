@@ -26,7 +26,9 @@ sideEffects:
   - write-issue
   - add-blocking-links
 stopCondition: Every ticket is a tracer bullet with explicit blockers and a publication target.
-risk: medium
+risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # To Tickets

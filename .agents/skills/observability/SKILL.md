@@ -20,6 +20,7 @@ sideEffects:
   - read-only
 stopCondition: The signal surface and diagnostic priorities are clear enough to implement.
 risk: low
+trustTier: 2
 ---
 
 # Observability

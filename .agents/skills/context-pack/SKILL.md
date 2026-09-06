@@ -17,6 +17,8 @@ sideEffects:
   - read-only
 stopCondition: The pack has an ordered read set with explicit freshness and provenance, and stays bounded.
 risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Context Pack

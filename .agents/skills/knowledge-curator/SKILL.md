@@ -19,6 +19,8 @@ sideEffects:
   - write-docs
 stopCondition: The durable knowledge set is consistent, stale/duplicate material is rejected or merged, update is minimal and durable, contradictions resolved or flagged.
 risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Knowledge Curator

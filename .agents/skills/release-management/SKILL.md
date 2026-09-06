@@ -21,7 +21,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The release train, CI handoff, and rollback posture are explicit enough to implement safely.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Release Management

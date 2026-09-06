@@ -21,7 +21,9 @@ sideEffects:
   - create-project
   - write-project-config
 stopCondition: The board exists at a confirmed URL with the agreed fields, views, and items.
-risk: medium
+risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Make Project

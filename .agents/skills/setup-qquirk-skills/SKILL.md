@@ -20,6 +20,7 @@ sideEffects:
   - write-docs
 stopCondition: The repo-specific skill configuration is written and consistent.
 risk: medium
+trustTier: 3
 ---
 
 # Setup Qquirk Skills

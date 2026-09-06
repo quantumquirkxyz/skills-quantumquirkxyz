@@ -19,6 +19,8 @@ sideEffects:
   - read-only
 stopCondition: A proposed deep-module interface or seam is identified with rationale.
 risk: low
+maxIterations: 5
+trustTier: 2
 ---
 
 # Codebase Design

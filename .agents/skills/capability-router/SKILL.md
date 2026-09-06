@@ -19,6 +19,7 @@ sideEffects:
   - recommend-only
 stopCondition: A selected Skill is named with explicit rationale and fallback options noted.
 risk: low
+trustTier: 2
 ---
 
 # Capability Router

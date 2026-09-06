@@ -24,6 +24,7 @@ sideEffects:
   - write-docs
 stopCondition: The user has completed the interactive tutorial worksheets, created their first skill in the sandbox, and validated their learning objectives.
 risk: low
+trustTier: 2
 ---
 
 # Skill Tutor: Interactive Guide to Creating Your First qquirk Skill

@@ -21,7 +21,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The runtime signals and alert priorities are clear enough to implement.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Monitoring and Alerting

@@ -20,7 +20,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The Vercel seam and runtime expectations are explicit enough to implement or review.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Vercel

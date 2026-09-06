@@ -21,6 +21,8 @@ sideEffects:
   - read-only
 stopCondition: The reusable UI system and its usage rules are explicit enough for consistent implementation.
 risk: low
+maxIterations: 5
+trustTier: 2
 ---
 
 # Design System

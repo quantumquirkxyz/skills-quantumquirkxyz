@@ -21,6 +21,8 @@ sideEffects:
   - read-only
 stopCondition: The UI seam, interaction model, and visual direction are clear enough to hand off to implementation.
 risk: low
+maxIterations: 5
+trustTier: 2
 ---
 
 # Frontend Design

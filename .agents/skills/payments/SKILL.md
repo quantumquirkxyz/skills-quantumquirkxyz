@@ -22,6 +22,7 @@ sideEffects:
   - read-only
 stopCondition: The payment seam, reconciliation path, and failure posture are explicit enough to implement or review.
 risk: high
+trustTier: 4
 ---
 
 # Payments

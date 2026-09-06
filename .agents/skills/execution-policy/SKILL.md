@@ -19,6 +19,7 @@ sideEffects:
   - read-only
 stopCondition: The action is allowed or blocked with reason, approval requirement is clear, and rollback is named.
 risk: low
+trustTier: 2
 ---
 
 # Execution Policy

@@ -17,6 +17,8 @@ sideEffects:
   - create-pr
 stopCondition: The prepared branch is pushed and a PR is open, preferring non-draft and falling back to draft when needed.
 risk: medium
+maxIterations: 3
+trustTier: 3
 ---
 
 # Publish Open PR

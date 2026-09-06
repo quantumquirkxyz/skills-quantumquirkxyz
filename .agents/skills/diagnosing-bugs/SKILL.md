@@ -22,6 +22,8 @@ sideEffects:
   - write-code
 stopCondition: A tight red-capable feedback loop exists and the bug is minimised.
 risk: high
+maxIterations: 3
+trustTier: 4
 ---
 
 # Diagnosing Bugs

@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: The documentation and ADR guidance are explicit enough to keep the repo coherent.
 risk: low
+trustTier: 2
 ---
 
 # Docs Management

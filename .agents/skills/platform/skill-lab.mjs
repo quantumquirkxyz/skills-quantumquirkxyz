@@ -134,6 +134,8 @@ sideEffects:
   - write-docs
 stopCondition: The requested ${name} result is complete and its validation evidence is recorded.
 risk: medium
+trustTier: 3
+maxIterations: 5
 ---
 
 # ${name}
@@ -172,9 +174,22 @@ async function validate() {
     const warnings = [];
     for (const key of required) if (!fm[key] || (Array.isArray(fm[key]) && !fm[key].length)) errors.push(`missing ${key}`);
     if (requested || labSkillNames.has(name)) {
-      for (const key of ['sideEffects', 'stopCondition', 'risk']) {
+      for (const key of ['sideEffects', 'stopCondition', 'risk', 'trustTier']) {
         if (fm[key] === undefined) errors.push(`missing ${key}`);
       }
+      if (fm.maxIterations === undefined) warnings.push(`missing maxIterations; required when skill body contains a repeat/loop`);
+    }
+    if (fm.trustTier && !['1', '2', '3', '4'].includes(String(fm.trustTier))) {
+      errors.push(`trustTier must be 1|2|3|4 (${fm.trustTier})`);
+    }
+    if (fm.maxIterations && (!Number.isInteger(Number(fm.maxIterations)) || Number(fm.maxIterations) < 1)) {
+      errors.push(`maxIterations must be a positive integer (${fm.maxIterations})`);
+    }
+    const allowedRisks = new Set(['low', 'medium', 'high']);
+    if (!allowedRisks.has(fm.risk)) errors.push(`risk must be low|medium|high (${fm.risk})`);
+    const tierRiskMap = { low: [1, 2], medium: [3], high: [4] };
+    if (fm.trustTier && fm.risk && !tierRiskMap[fm.risk]?.includes(Number(fm.trustTier))) {
+      warnings.push(`trustTier ${fm.trustTier} does not match risk ${fm.risk} (expected ${tierRiskMap[fm.risk].join('|')})`);
     }
     if (fm.name !== name) errors.push(`frontmatter name must be ${name}`);
     const body = text.replace(/^---[\s\S]*?---\s*/, '');

@@ -21,7 +21,9 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The auth seam and access-control contract are explicit enough to implement or review.
-risk: medium
+risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Auth

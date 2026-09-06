@@ -16,6 +16,8 @@ dependencies: []
 sideEffects: []
 stopCondition: The graph is generated and cycles or high-coupling nodes are explicitly reported.
 risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 # Skill Dependency Graph

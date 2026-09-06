@@ -19,6 +19,8 @@ sideEffects:
   - write-code
 stopCondition: One behavior slice is green at a public seam.
 risk: medium
+trustTier: 3
+maxIterations: 20
 ---
 
 # Test-Driven Development

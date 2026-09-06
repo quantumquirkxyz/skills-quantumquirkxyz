@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: The project's shape and best initial workflow are identified clearly enough to route the next skill.
 risk: low
+trustTier: 2
 ---
 
 # Project Development

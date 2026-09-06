@@ -17,6 +17,7 @@ sideEffects:
   - write-docs
 stopCondition: A redacted handoff document is saved for the next session.
 risk: low
+trustTier: 2
 ---
 
 Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS - not the current workspace.

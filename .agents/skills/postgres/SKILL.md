@@ -20,7 +20,8 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: The schema shape and query constraints are explicit enough to implement safely.
-risk: medium
+risk: low
+trustTier: 2
 ---
 
 # Postgres

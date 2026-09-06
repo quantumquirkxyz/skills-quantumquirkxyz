@@ -18,6 +18,7 @@ sideEffects:
   - read-only
 stopCondition: The Skill passes or fails against a fixed scenario set with regressions captured in writing.
 risk: low
+trustTier: 2
 ---
 
 # Evaluate Skill

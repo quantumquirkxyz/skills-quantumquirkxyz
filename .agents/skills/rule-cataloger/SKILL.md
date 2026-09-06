@@ -16,6 +16,7 @@ dependencies: []
 sideEffects: []
 stopCondition: Every discovered rule is listed with its source Skill, type, and frequency.
 risk: low
+trustTier: 2
 ---
 
 # Rule Cataloger

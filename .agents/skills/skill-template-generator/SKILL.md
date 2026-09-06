@@ -22,6 +22,8 @@ sideEffects:
   - write-docs
 stopCondition: A valid sandbox Skill exists with an explicit contract and a command to validate it.
 risk: medium
+maxIterations: 3
+trustTier: 3
 ---
 
 # Skill Template Generator

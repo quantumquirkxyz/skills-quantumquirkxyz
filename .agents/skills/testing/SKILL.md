@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: The test strategy and seam choices are explicit enough to implement without guessing.
 risk: low
+trustTier: 2
 ---
 
 # Testing

@@ -21,6 +21,7 @@ sideEffects:
   - read-only
 stopCondition: Bundle parity, lock coverage, and contract drift have been checked.
 risk: low
+trustTier: 2
 ---
 
 # Skill Audit

@@ -17,7 +17,9 @@ dependencies:
 sideEffects:
   - read-only
 stopCondition: Both axes are reported against the fixed point with no ambiguity in separation.
-risk: medium
+risk: low
+maxIterations: 3
+trustTier: 2
 ---
 
 Do not change source files, fix the PR, or merge it in this skill; publish findings only.

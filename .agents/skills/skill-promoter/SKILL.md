@@ -26,6 +26,8 @@ sideEffects:
   - create-pr
 stopCondition: The skill has been promoted to the canonical bundle or promotion has been denied with explicit rationale.
 risk: medium
+maxIterations: 3
+trustTier: 3
 ---
 
 # Skill Promoter

@@ -17,6 +17,7 @@ dependencies: []
 sideEffects: []
 stopCondition: The report identifies frontmatter changes, content changes, and whether review is required.
 risk: low
+trustTier: 2
 ---
 
 # Skill Diff Analyzer

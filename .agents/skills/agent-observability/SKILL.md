@@ -19,6 +19,7 @@ sideEffects:
   - write-docs
 stopCondition: An execution record has been captured, redacted, structured for analysis, and linked to relevant outputs or validation evidence.
 risk: low
+trustTier: 2
 ---
 
 # Agent Observability

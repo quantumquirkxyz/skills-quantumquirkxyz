@@ -19,6 +19,8 @@ sideEffects:
   - run-tests
 stopCondition: The scoped review fixes are implemented and validated locally.
 risk: medium
+maxIterations: 5
+trustTier: 3
 ---
 
 # Implement Review Fixes
