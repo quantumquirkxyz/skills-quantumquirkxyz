@@ -2,6 +2,15 @@
 
 Use this checklist before publishing a new qquirk Skills version.
 
+```mermaid
+flowchart TD
+    A[Start release] --> B[Pre-release checks]
+    B --> C[Commit and tag]
+    C --> D[Release]
+    D --> E[Post-release validation]
+    E --> F[Add case study if needed]
+```
+
 ## Pre-release
 
 - [ ] Update `VERSION`.
