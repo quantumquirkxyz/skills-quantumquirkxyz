@@ -2,6 +2,26 @@
 
 This repo uses the repository-local qquirk Skills bundle in `.agents/skills/`. This index is the operating map for the bundle and the first stop for any work-item or review flow.
 
+```mermaid
+flowchart TD
+    A[work-item-router] --> B[triage]
+    A --> C[to-spec]
+    A --> D[to-tickets]
+    A --> E[review-pr]
+    A --> F[plan-review-fixes]
+    A --> G[implement-review-fixes]
+    A --> H[publish-open-pr]
+    A --> I[ship-subissue]
+    B --> J{conflicted?}
+    J -->|yes| K[resolving-merge-conflicts]
+    K --> E
+    J -->|no| L[normal flow]
+    E -->|findings| F
+    F --> G
+    G --> E
+    E -->|clean| I
+```
+
 ## Work item flow
 
 - `work-item-router` reads this index first before any spec, ticket, project board, or publication flow.
@@ -12,17 +32,19 @@ This repo uses the repository-local qquirk Skills bundle in `.agents/skills/`. T
 
 ## Configuration docs
 
-- [qquirk method](qquirk-method.md)
-- [Provenance](provenance.md)
-- [Issue tracker](issue-tracker.md)
-- [Work item format](work-item-format.md)
-- [Domain docs](domain.md)
-- [Triage labels](triage-labels.md)
-- [Skills map](skills-map.md)
-- [Skill templates](skill-templates.md)
-- [Adoption guide](adoption-guide.md)
-- [Stack matrix](stack-matrix.md)
-- [Skill style guide](skill-style-guide.md)
-- [Release checklist](release-checklist.md)
-- [Multi-agent protocol](multi-agent-protocol.md)
-- [Provenance inventory](provenance-inventory.md)
+| Document | Purpose |
+|---|---|
+| [qquirk method](qquirk-method.md) | Method vocabulary and quality bar |
+| [Provenance](provenance.md) | Origin, redesign, retired names |
+| [Issue tracker](issue-tracker.md) | Tracker configuration |
+| [Work item format](work-item-format.md) | Metadata shape for specs, tickets, PRs |
+| [Domain docs](domain.md) | Domain vocabulary layout |
+| [Triage labels](triage-labels.md) | Triage label vocabulary |
+| [Skills map](skills-map.md) | Full skills inventory |
+| [Skill templates](skill-templates.md) | Artifact templates map |
+| [Adoption guide](adoption-guide.md) | Installation and sync |
+| [Stack matrix](stack-matrix.md) | Stack-specific skills |
+| [Skill style guide](skill-style-guide.md) | Editing and authoring rules |
+| [Release checklist](release-checklist.md) | Pre/post-release gates |
+| [Multi-agent protocol](multi-agent-protocol.md) | Multi-session handoff rules |
+| [Provenance inventory](provenance-inventory.md) | Provenance records |
