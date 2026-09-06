@@ -59,6 +59,15 @@ The bundle may be influenced by public skill patterns, GitHub workflow practices
 
 The point is not to hide influence. It is to turn influence into a distinct quirk system with its own vocabulary, template ownership, and delivery flow.
 
+## 2026-09 — Sandbox-to-canonical promotion
+
+- **Source:** `.skill-sandbox/` (experimental)
+- **Outcome:** 33 new skills promoted to `.agents/skills/` with `.claude/skills/` symlinks.
+- **Validation:** all 33 passed `skill-lab.mjs validate --json`; 2 pre-existing test skills (`test-skill`, `test-workflow-improvements`) failed and were excluded.
+- **Categories covered:** Math (pure, applied, numerical, optimization, linear algebra, probability, crypto), Physics (quantum, classical, thermo, astro), Quant Finance (factors, backtest, derivatives, portfolio optimization, credit risk, market microstructure, risk, volatility), General Finance (DCF, corporate valuation, portfolio theory), Web3 (smart contracts, tokenomics, consensus, L2, DeFi, governance, privacy, DAOs), DB (relational, NoSQL, design, optimization, migration), SE (architecture, patterns, testing, DevOps, observability, security), CS (algorithms, complexity, distributed, formal methods), Documentation (ADR, audit, glossary, tech writing), Research (scientific hypothesis, experiment design, statistics, reproducibility), Professional Research (market analysis, competitive intel, user/product research).
+- **Method:** contracts added (capabilities, outputs, stopCondition, risk, trustTier, Boundary), validated lot-by-lot, promoted via copy + symlink.
+- **Status:** canonical bundle updated; provenance recorded.
+
 ## Maintenance Rule
 
 When adding, renaming, or retiring a skill:

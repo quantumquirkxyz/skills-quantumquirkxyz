@@ -150,6 +150,48 @@ These Skills share the `platform/skill-lab.mjs` command surface and use the
 | `mobile` | Device constraints, offline behavior |
 | `payments` | Payment flows, reconciliation, rollback |
 
+## New Domain Skills — Promoted from Sandbox (2026-09)
+
+Validated via `skill-lab.mjs validate --json` (33 PASS, 2 FAIL excluded) and promoted to `.agents/skills/` with `.claude/skills/` symlinks.
+
+| Skill | Domain / Subfield |
+|---|---|
+| `math-pure-proofs` | Pure math proofs (number theory, algebra, analysis) |
+| `math-computational` | Numerical / symbolic computation |
+| `math-optimization` | Optimization (LP, convex, MIP, combinatorial) |
+| `math-linear-algebra` | Decompositions (SVD, eigendecomposition, least squares) |
+| `math-probability-models` | Probability distributions, stochastic processes |
+| `math-cryptography` | Cryptographic primitives and hardness assumptions |
+| `physics-quantum` | Quantum mechanics, Dirac notation, measurement |
+| `physics-classical` | Newton / Lagrangian / Hamiltonian mechanics |
+| `physics-thermo` | Thermodynamics, cycles, entropy, phase transitions |
+| `physics-astro` | Astrophysics, stellar dynamics, cosmology |
+| `quant-factors` | Quantitative factor construction (momentum, value, carry) |
+| `quant-backtest` | Backtest audit (biases, costs, out-of-sample) |
+| `quant-derivatives-pricing` | Options / exotics pricing, Greeks, calibration |
+| `quant-portfolio-opt` | Portfolio optimization (mean-variance, risk-parity, factor) |
+| `quant-credit-risk` | PD/LGD/EAD, portfolio loss distribution, stress |
+| `quant-market-micro` | Microstructure, execution costs, optimal execution |
+| `quant-risk-modeling` | VaR / CVaR / drawdown / stress testing |
+| `finance-corporate-val` | Corporate valuation (DCF, multiples, sum-of-parts) |
+| `finance-dcf` | Discounted cash flow (forecast, WACC, sensitivity) |
+| `finance-portfolio-theory` | MPT, CAPM, APT, performance attribution |
+| `web3-smart-contracts` | Contract design, security audit, gas, upgrade |
+| `web3-tokenomics` | Token economics, issuance, incentives, governance |
+| `web3-consensus` | Consensus analysis (PoW, PoS, BFT, finality) |
+| `web3-l2-scaling` | Rollups, validiums, DA, throughput / cost |
+| `web3-defi` | AMM, lending, stablecoins, composability risk |
+| `web3-governance` | On-chain / off-chain governance, voting, attacks |
+| `db-relational-design` | Schema, keys, indexes, normalisation, migrations |
+| `db-nosql-modeling` | Document / key-value / wide-column / graph / time-series |
+| `se-architecture-decisions` | ADR creation, trade-off documentation |
+| `cs-algorithms` | Algorithm design, correctness, complexity analysis |
+| `scientific-hypothesis` | Hypothesis formulation, variables, statistical plan |
+| `docs-adrs` | Architecture Decision Records |
+| `pro-market-analysis` | TAM / SAM / SOM, competitive mapping, trends |
+
+Provenance: `docs/agents/provenance.md` section "2026-09 — Sandbox-to-canonical promotion".
+
 ## Support
 
 | Skill | Purpose |
