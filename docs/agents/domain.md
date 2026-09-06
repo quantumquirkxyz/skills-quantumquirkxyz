@@ -2,7 +2,16 @@
 
 ## Layout
 
-Single-context.
+```mermaid
+flowchart TD
+    A[Repo root] --> B[CONTEXT.md]
+    A --> C[docs/adr/]
+    C --> D[ADR files]
+    B --> E[Primary durable context]
+    D --> F[Architectural decisions]
+    E --> G[Domain vocabulary]
+    F --> G
+```
 
 ## Consumer rules
 
