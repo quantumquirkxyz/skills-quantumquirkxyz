@@ -8,12 +8,21 @@ Each skill owns the template, examples, and supporting references for the artifa
 - If a skill has multiple artifact shapes, it should keep one reference file per artifact shape.
 - Shared quality principles live in `docs/agents/qquirk-method.md` and `docs/agents/work-item-format.md`.
 
+```mermaid
+flowchart TD
+    A[New artifact shape] --> B{Owned by skill?}
+    B -->|yes| C[Add reference file in skill folder]
+    B -->|no| D[Add to repo-level index only]
+    C --> E[Skill defines contract]
+    D --> F[Index stays as map, not contract]
+```
+
 ## Current template ownership
 
 ### Work items and review
 
 | Skill | Artifact | Purpose | Next consumer |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `triage` | `AGENT-BRIEF.md`, `OUT-OF-SCOPE.md`, needs-info template | Stable triage state and durable handoff | `implement`, `plan-review-fixes`, or `wontfix` closure |
 | `to-spec` | `references/spec-template.md` | Publish a buildable spec issue | `to-tickets` |
 | `to-tickets` | `references/issue-template.md` | Split spec into tracer-bullet tickets | `implement` |
@@ -25,7 +34,7 @@ Each skill owns the template, examples, and supporting references for the artifa
 ### Setup and structure
 
 | Skill | Artifact | Purpose | Next consumer |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `setup-qquirk-skills` | seed tracker/domain templates | Configure a repo for qquirk workflows | `ask-to`, `triage`, `to-spec` |
 | `make-project` | `references/graphql.md` | Create and configure a GitHub Projects board | project users and work-item skills |
 | `domain-modeling` | `ADR-FORMAT.md`, `CONTEXT-FORMAT.md` | Record and maintain domain vocabulary | `grill-with-docs`, `triage`, `make-project` |
@@ -34,7 +43,7 @@ Each skill owns the template, examples, and supporting references for the artifa
 ### Routing and learning
 
 | Skill | Artifact | Purpose | Next consumer |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `ask-to` | routing guidance in `SKILL.md` | Choose the next skill path | the user and downstream skill |
 | `evaluate-skill` | behavioral fixtures under `behavioral-fixtures/` | Prove artifact and route behavior | `audit-semantics`, `check-all` |
 | `writing-great-skills` | glossary and authoring guidance files | Maintain the style and vocabulary of the bundle | skill authors and reviewers |
