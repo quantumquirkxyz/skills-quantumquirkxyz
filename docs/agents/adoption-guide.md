@@ -4,6 +4,15 @@ Use this guide when installing this skills bundle into a new or existing project
 
 ## Adoption Flow
 
+```mermaid
+flowchart TD
+    A[Copy or sync bundle files] --> B[Run setup-qquirk-skills]
+    B --> C[Configure tracker and domain docs]
+    C --> D[Update CONTEXT.md]
+    D --> E[Run validation]
+    E --> F[Start normal work]
+```
+
 1. Copy or sync `.agents/skills/`, `.claude/skills/`, `docs/agents/`, `docs/adr/README.md`, `CONTEXT.md`, and `skills-lock.json` into the target repo.
 2. Run `setup-qquirk-skills` once in the target repo.
 3. Configure `docs/agents/issue-tracker.md`, `docs/agents/triage-labels.md`, and `docs/agents/domain.md` for the project's real tracker and domain layout.
@@ -13,61 +22,65 @@ Use this guide when installing this skills bundle into a new or existing project
 
 ## Required Repo Files
 
-- `AUTHORSHIP.md` — authorship, naming, and integrity rules for the qquirk method.
-- `.agents/skills/` — canonical skill definitions.
-- `.claude/skills/` — compatibility symlinks to the canonical skill folders.
-- `skills-lock.json` — SHA-256 hashes for every canonical `SKILL.md`.
-- `docs/agents/index.md` — governance index read by work-item skills.
-- `docs/agents/qquirk-method.md` — method vocabulary and quality bar.
-- `docs/agents/provenance.md` — origin, redesign, and retired-name record.
-- `docs/agents/work-item-format.md` — metadata shape for specs, tickets, PRs, and review comments.
-- `docs/agents/skill-templates.md` — map of artifact templates owned by each skill.
-- `CONTEXT.md` — repository-local domain vocabulary.
+| File | Purpose |
+|---|---|
+| `AUTHORSHIP.md` | Authorship, naming, and integrity rules |
+| `.agents/skills/` | Canonical skill definitions |
+| `.claude/skills/` | Compatibility symlinks to canonical skills |
+| `skills-lock.json` | SHA-256 hashes for canonical `SKILL.md` files |
+| `docs/agents/index.md` | Governance index for work-item skills |
+| `docs/agents/qquirk-method.md` | Method vocabulary and quality bar |
+| `docs/agents/provenance.md` | Origin, redesign, retired-name record |
+| `docs/agents/work-item-format.md` | Metadata shape for specs, tickets, PRs |
+| `docs/agents/skill-templates.md` | Artifact template map |
+| `CONTEXT.md` | Repository-local domain vocabulary |
 
 ## Validation Commands
 
-Run these from the target repo root:
+Run from the target repo root:
 
 ```bash
 node .agents/skills/platform/check-all.mjs
 ```
 
-Expected result: the command returns `status: "pass"`.
+Expected result: `status: "pass"`.
 
 ## First Project Run
 
-For a standard feature:
+### Standard feature
 
-```text
-ask-to
--> grill-with-docs
--> to-spec
--> to-tickets
--> implement
--> publish-open-pr
--> review-pr
--> review-fix-loop when needed
--> ship-subissue after a clean review
+```mermaid
+flowchart LR
+    A[ask-to] --> B[grill-with-docs]
+    B --> C[to-spec]
+    C --> D[to-tickets]
+    D --> E[implement]
+    E --> F[publish-open-pr]
+    F --> G[review-pr]
+    G --> H{clean?}
+    H -->|no| I[review-fix-loop]
+    I --> G
+    H -->|yes| J[ship-subissue]
 ```
 
-For a bug:
+### Bug fix
 
-```text
-ask-to
--> diagnosing-bugs
--> tdd
--> implement
--> publish-open-pr
--> review-pr
+```mermaid
+flowchart LR
+    A[ask-to] --> B[diagnosing-bugs]
+    B --> C[tdd]
+    C --> D[implement]
+    D --> E[publish-open-pr]
+    E --> F[review-pr]
 ```
 
-For operations work:
+### Operations
 
-```text
-release-management
--> deployment
--> observability
--> monitoring-alerting
+```mermaid
+flowchart LR
+    A[release-management] --> B[deployment]
+    B --> C[observability]
+    C --> D[monitoring-alerting]
 ```
 
 ## Specialization Rules
@@ -94,7 +107,8 @@ release-management
 
 ## Maintenance Cadence
 
-- Run `check-all.mjs` after every skill edit.
-- Run `audit-semantics.mjs` before publishing the bundle when you need the detailed semantic report.
-- Run `evaluate-scenarios.mjs` after changing routing, templates, or workflow skills when you need the scenario-only report.
-- Add a scenario before fixing a repeated routing or artifact-quality failure.
+| Check | When to run |
+|---|---|
+| `check-all.mjs` | After every skill edit |
+| `audit-semantics.mjs` | Before publishing the bundle |
+| `evaluate-scenarios.mjs` | After changing routing, templates, or workflow skills |
