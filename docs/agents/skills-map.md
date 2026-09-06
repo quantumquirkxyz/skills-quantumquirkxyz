@@ -234,3 +234,46 @@ Validated via `skill-lab.mjs validate --json` (15 PASS, 0 FAIL) and promoted to 
 | `physics-talk-design` | Seminar / poster / public talk |
 | `physics-career-postdoc` | Postdoc / faculty / grant applications |
 | `physics-reproducibility-archive` | Zenodo DOI + GitHub release + FAIR checklist |
+
+## New Domain Skills — Third Promotion (AI, Security, DevOps, Data, Product) 2026-09
+
+Validated via `skill-lab.mjs validate --json` (19 PASS, 0 FAIL) and promoted to `.agents/skills/` with `.claude/skills/` symlinks.
+
+### AI/ML (4)
+| Skill | Subfield |
+|---|---|
+| `ai-ml-pipeline` | ML pipeline design (data, model, eval, deploy) |
+| `ai-prompt-engineering` | LLM prompt design + evaluation |
+| `ai-model-evaluation` | Metrics, fairness, robustness, explainability |
+| `ai-time-series-forecasting` | Forecasting (ARIMA, Prophet, LSTM, Transformer) |
+
+### Security (4)
+| Skill | Subfield |
+|---|---|
+| `sec-security-audit` | Code / dependency / secret audit |
+| `sec-threat-modeling` | STRIDE / ATT&CK threat modeling |
+| `sec-privacy-engineering` | GDPR / CCPA / HIPAA compliance design |
+| `sec-cryptography-applied` | Encryption, signatures, key management, TLS |
+
+### DevOps (5)
+| Skill | Subfield |
+|---|---|
+| `devops-k8s-orchestration` | Kubernetes architecture & policies |
+| `devops-ci-cd-pipeline` | CI/CD pipeline design & rollback |
+| `devops-sre-observability` | SLIs, SLOs, dashboards, alerts, runbooks |
+| `devops-terraform-iac` | Infrastructure as Code |
+| `devops-feature-flags` | Feature flags, rollouts, kill switches |
+
+### Data Engineering (3)
+| Skill | Subfield |
+|---|---|
+| `data-etl-pipeline` | ETL / ELT design |
+| `data-warehouse-modeling` | Star / snowflake / OBT schemas |
+| `data-streaming` | Kafka / Kinesis / Flink streaming |
+
+### Product (3)
+| Skill | Subfield |
+|---|---|
+| `prod-prd-writing` | PRD, user stories, acceptance criteria |
+| `prod-ab-testing` | A/B test design (power, metrics, rollback) |
+| `prod-okr-planning` | OKR cycles (objectives, key results, initiatives) |

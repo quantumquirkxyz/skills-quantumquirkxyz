@@ -77,6 +77,15 @@ The point is not to hide influence. It is to turn influence into a distinct quir
 - **Method:** contracts completed (capabilities/outputs/stopCondition/risk/trustTier/Boundary), validated lot-by-lot, promoted via copy + symlink.
 - **Status:** canonical bundle updated; provenance recorded.
 
+## 2026-09 — Third promotion (AI/ML, Security, DevOps, Data Eng, Product)
+
+- **Source:** `.skill-sandbox/` (experimental)
+- **Outcome:** 19 new skills promoted to `.agents/skills/` with `.claude/skills/` symlinks.
+- **Validation:** all 19 passed `skill-lab.mjs validate --json`; 0 failures.
+- **Categories:** AI/ML (4: ml-pipeline, prompt-engineering, model-evaluation, time-series-forecasting); Security (4: security-audit, threat-modeling, privacy-engineering, cryptography-applied); DevOps (5: k8s-orchestration, ci-cd-pipeline, sre-observability, terraform-iac, feature-flags); Data Eng (3: etl-pipeline, warehouse-modeling, streaming); Product (3: prd-writing, ab-testing, okr-planning).
+- **Method:** contracts completed, trustTier fixed (medium → 3), validated batch, promoted via copy + symlink.
+- **Status:** canonical bundle updated; provenance recorded.
+
 ## Maintenance Rule
 
 When adding, renaming, or retiring a skill:
