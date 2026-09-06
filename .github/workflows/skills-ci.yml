@@ -20,3 +20,73 @@ jobs:
 
       - name: Validate skills bundle
         run: node .agents/skills/platform/check-all.mjs
+
+  semantic-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check semantic drift and frontmatter contract
+        run: node .agents/skills/platform/audit-semantics.mjs
+
+  conflict-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check for skill-shadowing and trigger conflicts
+        run: node .agents/skills/platform/validate-skills.mjs
+
+  provenance-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify lockfile against canonical skills
+        run: node .agents/skills/platform/validate-skills.mjs
+
+  evaluation-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check behavioral fixtures coverage
+        run: node .agents/skills/platform/evaluate-behavioral-fixtures.mjs
+
+  scenario-routes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate workflow scenario routes
+        run: node .agents/skills/platform/evaluate-scenarios.mjs
