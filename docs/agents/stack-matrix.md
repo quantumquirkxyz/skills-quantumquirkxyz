@@ -2,8 +2,18 @@
 
 Use this matrix when adapting qquirk Skills to a project stack.
 
+```mermaid
+flowchart TD
+    A[Stack surface] --> B[Primary skills]
+    A --> C[Required docs]
+    A --> D[Minimum validation]
+    B --> E[Stack-specific constraints]
+    C --> E
+    D --> E
+```
+
 | Stack surface | Primary skills | Required docs | Minimum validation |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | Next.js app | `nextjs`, `react`, `frontend-design`, `webapp-testing` | route map, rendering constraints, UI acceptance criteria | typecheck, focused component/API tests, one browser path when UI changes |
 | React UI | `react`, `design-system`, `frontend-design`, `webapp-testing` | component inventory, state boundary, design tokens | component tests or Storybook checks when present, accessibility-relevant checks |
 | API service | `api-design`, `api-contracts`, `auth`, `testing` | API contract, error contract, auth boundary | contract tests, integration tests, lint/typecheck |
@@ -14,4 +24,4 @@ Use this matrix when adapting qquirk Skills to a project stack.
 | Search | `search`, `api-design`, `observability` | index shape, freshness rules, relevance controls | indexing tests, representative query checks |
 | Mobile | `mobile`, `frontend-design`, `testing` | offline behavior, device constraints, platform boundary | simulator/device path or documented manual check |
 
-Do not add stack-specific assumptions to core skills. Specialize through repo docs, ADRs, and stack skills.
+> Do not add stack-specific assumptions to core skills. Specialize through repo docs, ADRs, and stack skills.
